@@ -1,0 +1,20 @@
+footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}

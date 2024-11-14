@@ -42,3 +42,12 @@ nav a:hover {
   background-color: var(--accent-color);
 }
 
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav a {
+    text-align: center;
+  }
+}

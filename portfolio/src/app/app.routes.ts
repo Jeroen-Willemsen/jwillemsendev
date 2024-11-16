@@ -1,11 +1,12 @@
-import {Routes} from '@angular/router';
-import {WorksComponent} from './components/works/works.component';
 import {AboutMeComponent} from './components/about-me/about-me.component';
-import {SideProjectsComponent} from './components/side-projects/side-projects.component';
 import {ContactMeComponent} from './components/contact-me/contact-me.component';
-import {TicTacToeComponent} from './tic-tac-toe/tic-tac-toe.component';
-import {MemoryGameComponent} from './memory-game/memory-game.component';
 import {HangmanGameComponent} from './hangman-game/hangman-game.component';
+import {MemoryGameComponent} from './memory-game/memory-game.component';
+import {Routes} from '@angular/router';
+import {SideProjectsComponent} from './components/side-projects/side-projects.component';
+import {TicTacToeComponent} from './tic-tac-toe/tic-tac-toe.component';
+import {WhackAMoleComponent} from './whack-a-mole/whack-a-mole.component';
+import {WorksComponent} from './components/works/works.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: '/about-me', pathMatch: 'full'},
@@ -16,6 +17,7 @@ export const routes: Routes = [
   {path: 'tic-tac-toe', component: TicTacToeComponent},
   {path: 'memory-game', component: MemoryGameComponent},
   {path: 'hangman-game', component: HangmanGameComponent},
+  {path: 'whack-a-mole-game', component: WhackAMoleComponent},
   // Optionally add a wildcard route for a 404 page
   // { path: '**', component: PageNotFoundComponent },
 ];

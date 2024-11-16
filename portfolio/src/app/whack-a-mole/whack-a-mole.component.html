@@ -1,0 +1,18 @@
+<div class="game">
+  <h1>Whack-a-Mole</h1>
+  <p *ngIf="!gameActive">Click "Start Game" to begin!</p>
+  <p *ngIf="gameActive">Time Left: {{ timeLeft }} seconds</p>
+  <p *ngIf="gameActive">Score: {{ score }}</p>
+  <div class="grid">
+    <div
+      *ngFor="let hole of holes; let idx = index"
+      class="hole"
+      (click)="whackMole(idx)">
+      <div class="mole" *ngIf="hole">🐹</div>
+    </div>
+  </div>
+  <button (click)="startGame()" *ngIf="!gameActive">Start Game</button>
+  <div *ngIf="!gameActive && timeLeft !== 30">
+    <p>Game Over! Your score is {{ score }}.</p>
+  </div>
+</div>

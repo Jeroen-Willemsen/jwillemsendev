@@ -1,11 +1,12 @@
-import { AboutMeComponent } from './about-me/about-me.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { ContactMeComponent } from './contact-me/contact-me.component';
+import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { NgModule } from '@angular/core';
-import { SideProjectsComponent } from './side-projects/side-projects.component';
-import { WorksComponent } from './works/works.component';
+import { SideProjectsComponent } from './components/side-projects/side-projects.component';
+import { WorksComponent } from './components/works/works.component';
+import {DocumentListComponent} from './document-list/document-list.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { WorksComponent } from './works/works.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    DocumentListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import {WorksComponent} from './works/works.component';
-import {AboutMeComponent} from './about-me/about-me.component';
-import {SideProjectsComponent} from './side-projects/side-projects.component';
-import {ContactMeComponent} from './contact-me/contact-me.component';
+import {WorksComponent} from './components/works/works.component';
+import {AboutMeComponent} from './components/about-me/about-me.component';
+import {SideProjectsComponent} from './components/side-projects/side-projects.component';
+import {ContactMeComponent} from './components/contact-me/contact-me.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/about-me', pathMatch: 'full' },

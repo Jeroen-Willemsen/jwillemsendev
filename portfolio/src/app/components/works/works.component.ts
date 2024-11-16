@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
+import {DocumentListComponent} from '../../document-list/document-list.component';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import {FooterComponent} from '../footer/footer.component';
 
 @Component({
   selector: 'app-works',
+  standalone: true,
+  imports: [DocumentListComponent],
   templateUrl: './works.component.html',
   styleUrls: ['./works.component.scss'],
 })

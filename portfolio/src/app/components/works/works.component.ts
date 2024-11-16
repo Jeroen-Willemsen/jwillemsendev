@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import {DocumentListComponent} from '../../document-list/document-list.component';
-import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import {FooterComponent} from '../footer/footer.component';
+import { DocumentListComponent } from '../../document-list/document-list.component';
 
 @Component({
   selector: 'app-works',
@@ -22,6 +20,5 @@ export class WorksComponent {
       description: 'Description of Project B.',
       image: 'assets/images/project-b.jpg',
     },
-    // Add more projects as needed
   ];
 }

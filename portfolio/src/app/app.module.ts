@@ -6,6 +6,9 @@ import {DocumentListComponent} from './document-list/document-list.component';
 import {NgModule} from '@angular/core';
 import {SideProjectsComponent} from './components/side-projects/side-projects.component';
 import {WorksComponent} from './components/works/works.component';
+import {HangmanGameComponent} from './hangman-game/hangman-game.component';
+import {MemoryGameComponent} from './memory-game/memory-game.component';
+import {SnakeGameComponent} from './snake-game/snake-game.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import {WorksComponent} from './components/works/works.component';
     BrowserModule,
     DocumentListComponent,
     WorksComponent,
+    HangmanGameComponent,
+    MemoryGameComponent,
+    SnakeGameComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

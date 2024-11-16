@@ -1,0 +1,26 @@
+.gallery {
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  margin-right: 5px;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+}

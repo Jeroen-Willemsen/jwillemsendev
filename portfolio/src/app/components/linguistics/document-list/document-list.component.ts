@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {DocumentService} from '../services/document.service';
-import {Document} from '../models/document.model';
+import {DocumentService} from '../../../services/document.service';
+import {Document} from '../../../models/document.model';
 import {NgForOf} from '@angular/common';
 import {RouterLink} from '@angular/router';
 

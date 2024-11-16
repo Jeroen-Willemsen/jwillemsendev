@@ -1,0 +1,24 @@
+<h1>Linguistics</h1>
+<div class="tabs">
+  <button
+    [class.active]="selectedTab === 'app-popular-science'"
+    (click)="selectTab('app-popular-science')">
+    Popular science and blogs
+  </button>
+  <button
+    [class.active]="selectedTab === 'app-publications'"
+    (click)="selectTab('app-publications')">
+    Academic publications
+  </button>
+  <button
+    [class.active]="selectedTab === 'app-the-reta-language'"
+    (click)="selectTab('app-the-reta-language')">
+    The Reta language
+  </button>
+</div>
+
+<div class="tab-content">
+  <app-popular-science *ngIf="selectedTab === 'app-popular-science'"></app-popular-science>
+  <app-publications *ngIf="selectedTab === 'app-publications'"></app-publications>
+  <app-the-reta-language *ngIf="selectedTab === 'app-the-reta-language'"></app-the-reta-language>
+</div>

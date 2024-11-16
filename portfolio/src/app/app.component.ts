@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {FooterComponent} from './components/footer/footer.component';
-import {DocumentListComponent} from './document-list/document-list.component';
+import {DocumentListComponent} from './components/linguistics/document-list/document-list.component';
 
 @Component({
   selector: 'app-root',

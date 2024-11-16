@@ -16,7 +16,8 @@ export class TicTacToeComponent implements OnInit {
   playerTurn: string | undefined;
   winner: string | undefined;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.newGame();

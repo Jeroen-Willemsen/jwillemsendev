@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DocumentService } from '../services/document.service';
-import { Document } from '../models/document.model';
+import {Component, OnInit} from '@angular/core';
+import {DocumentService} from '../services/document.service';
+import {Document} from '../models/document.model';
 import {NgForOf} from '@angular/common';
 import {RouterLink} from '@angular/router';
 
@@ -17,7 +17,8 @@ import {RouterLink} from '@angular/router';
 export class DocumentListComponent implements OnInit {
   documents: Document[] = [];
 
-  constructor(private documentService: DocumentService) {}
+  constructor(private documentService: DocumentService) {
+  }
 
   ngOnInit(): void {
     this.documentService.getDocuments().subscribe((docs) => {

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { DocumentListComponent } from '../../document-list/document-list.component';
+import {Component} from '@angular/core';
+import {DocumentListComponent} from '../../document-list/document-list.component';
 
 @Component({
   selector: 'app-works',

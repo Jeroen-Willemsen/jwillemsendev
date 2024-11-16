@@ -2,14 +2,14 @@
   <h1>Tic-Tac-Toe</h1>
   <div class="board">
     <div
+      (click)="makeMove(idx)"
       *ngFor="let cell of board; let idx = index"
-      class="cell"
-      (click)="makeMove(idx)">
+      class="cell">
       {{ cell }}
     </div>
   </div>
   <div *ngIf="winner" class="result">
-    <p *ngIf="winner !== 'Draw'">Player {{ winner }} Wins!</p>
+    <p *ngIf="winner !== 'Draw'">Player {{ winner }} Wins</p>
     <p *ngIf="winner === 'Draw'">It's a Draw</p>
     <button (click)="newGame()">New Game</button>
   </div>

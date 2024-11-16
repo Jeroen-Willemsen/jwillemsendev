@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Document } from '../models/document.model';
+import {Injectable} from '@angular/core';
+import {Observable, of} from 'rxjs';
+import {Document} from '../models/document.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +21,8 @@ export class DocumentService {
     },
   ];
 
-  constructor() {}
+  constructor() {
+  }
 
   getDocuments(): Observable<Document[]> {
     return of(this.documents);

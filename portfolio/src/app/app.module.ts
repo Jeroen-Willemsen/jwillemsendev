@@ -14,7 +14,6 @@ import {SnakeGameComponent} from './snake-game/snake-game.component';
   declarations: [
     AboutMeComponent,
     ContactMeComponent,
-    SideProjectsComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +22,7 @@ import {SnakeGameComponent} from './snake-game/snake-game.component';
     HangmanGameComponent,
     MemoryGameComponent,
     SnakeGameComponent,
+    SideProjectsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

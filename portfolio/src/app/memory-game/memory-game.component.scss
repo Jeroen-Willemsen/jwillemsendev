@@ -1,6 +1,6 @@
 .game {
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .board {
@@ -8,12 +8,12 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 400px;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .card {
-  width: 80px;
-  height: 100px;
+  width: 70px;
+  height: 50px;
   margin: 10px;
   perspective: 1000px;
   cursor: pointer;

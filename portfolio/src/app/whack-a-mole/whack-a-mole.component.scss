@@ -1,19 +1,19 @@
 .game {
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
-  margin: 20px auto;
+  max-height: 50vh;
 }
 
 .hole {
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 95px;
   background-color: #7f8c8d;
   border-radius: 50%;
   position: relative;
@@ -29,10 +29,10 @@
 }
 
 button {
-  padding: 10px 20px;
+  margin-top: 5px;
   cursor: pointer;
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1em;
 }

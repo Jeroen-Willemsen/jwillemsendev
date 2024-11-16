@@ -1,6 +1,6 @@
 .game {
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   margin-top: 20px;
 }
 
@@ -24,6 +24,7 @@
   height: 40px;
   font-size: 1em;
   cursor: pointer;
+  text-align: center ;
 }
 
 .result {
@@ -32,6 +33,5 @@
 }
 
 button {
-  padding: 10px 20px;
   cursor: pointer;
 }

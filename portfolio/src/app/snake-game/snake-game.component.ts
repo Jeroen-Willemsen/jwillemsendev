@@ -1,13 +1,16 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-snake-game',
   standalone: true,
-  imports: [],
+  imports: [
+    NgIf
+  ],
   templateUrl: './snake-game.component.html',
-  styleUrl: './snake-game.component.scss'
+  styleUrl: './snake-game.component.scss',
 })
-export class SnakeGameComponent implements OnInit {
+export class SnakeGameComponent implements AfterViewInit {
   canvas: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
   box: number = 20;
@@ -18,30 +21,36 @@ export class SnakeGameComponent implements OnInit {
   score: number = 0;
   canvasWidth: number = 400;
   canvasHeight: number = 400;
+  gameOver: boolean = false; // Added gameOver flag
 
   constructor() {}
-
-  ngOnInit(): void {
-    this.initGame();
-  }
 
   ngAfterViewInit(): void {
     this.canvas = <HTMLCanvasElement>document.getElementById('gameCanvas');
     this.ctx = this.canvas.getContext('2d');
-    this.gameInterval = setInterval(() => this.gameLoop(), 100);
+    this.initGame(); // Initialize the game on component load
   }
 
   initGame(): void {
+    // Clear any existing game intervals
+    if (this.gameInterval) {
+      clearInterval(this.gameInterval);
+    }
     this.snake = [{ x: 9 * this.box, y: 10 * this.box }];
     this.direction = 'RIGHT';
     this.generateFood();
     this.score = 0;
+    this.gameOver = false; // Reset game over flag
+    // Start the game loop
+    this.gameInterval = setInterval(() => this.gameLoop(), 100);
   }
 
   generateFood(): void {
     this.food = {
-      x: Math.floor(Math.random() * (this.canvasWidth / this.box)) * this.box,
-      y: Math.floor(Math.random() * (this.canvasHeight / this.box)) * this.box,
+      x:
+        Math.floor(Math.random() * (this.canvasWidth / this.box)) * this.box,
+      y:
+        Math.floor(Math.random() * (this.canvasHeight / this.box)) * this.box,
     };
   }
 
@@ -83,7 +92,7 @@ export class SnakeGameComponent implements OnInit {
     if (this.direction === 'RIGHT') snakeX += this.box;
     if (this.direction === 'DOWN') snakeY += this.box;
 
-    // Check collision with walls
+    // Check collision with walls or self
     if (
       snakeX < 0 ||
       snakeY < 0 ||
@@ -92,8 +101,7 @@ export class SnakeGameComponent implements OnInit {
       this.collision({ x: snakeX, y: snakeY }, this.snake)
     ) {
       clearInterval(this.gameInterval);
-      alert('Game Over!');
-      this.initGame();
+      this.gameOver = true; // Set game over flag
       return;
     }
 

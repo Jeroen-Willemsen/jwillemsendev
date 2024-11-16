@@ -1,19 +1,18 @@
 .game {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
-  margin: 20px auto;
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 75px;
   background-color: #ececec;
   font-size: 2.5em;
   display: flex;
@@ -27,15 +26,19 @@
 .cell:hover {
   background-color: #d4d4d4;
 }
-
-.result,
 .turn {
-  margin-top: 20px;
-  font-size: 1.2em;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+.result {
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 1em;
 }
 
 button {
-  padding: 10px 20px;
   font-size: 1em;
   cursor: pointer;
 }

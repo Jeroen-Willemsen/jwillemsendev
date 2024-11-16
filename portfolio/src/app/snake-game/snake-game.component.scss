@@ -1,14 +1,14 @@
 .game {
   text-align: center;
-  font-family: Arial, sans-serif;
-  margin-top: 20px;
+  font-family: 'Roboto Mono', monospace;
 }
 
 canvas {
   border: 1px solid #ccc;
   background-color: #f0f0f0;
+  max-height: 40vh;
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1em;
 }

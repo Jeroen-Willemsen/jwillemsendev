@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {DocumentListComponent} from '../document-list/document-list.component';
+import {PublicationListComponent} from '../publication-list/publication-list.component';
 
 @Component({
   selector: 'app-publications',
   standalone: true,
   imports: [
-    DocumentListComponent
+    PublicationListComponent
   ],
   templateUrl: './publications.component.html',
   styleUrl: './publications.component.scss'

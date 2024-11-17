@@ -2,7 +2,7 @@ import {AboutMeComponent} from './components/about-me/about-me.component';
 import {AppComponent} from './app.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {ContactMeComponent} from './components/contact-me/contact-me.component';
-import {DocumentListComponent} from './components/linguistics/document-list/document-list.component';
+import {PublicationListComponent} from './components/linguistics/publication-list/publication-list.component';
 import {NgModule} from '@angular/core';
 import {SideProjectsComponent} from './components/side-projects/side-projects.component';
 import {LinguisticsComponent} from './components/linguistics/linguistics.component';
@@ -17,7 +17,7 @@ import {SnakeGameComponent} from './components/side-projects/games/snake-game/sn
   ],
   imports: [
     BrowserModule,
-    DocumentListComponent,
+    PublicationListComponent,
     LinguisticsComponent,
     HangmanGameComponent,
     MemoryGameComponent,

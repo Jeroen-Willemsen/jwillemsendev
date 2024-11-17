@@ -1,4 +1,4 @@
-export interface Document {
+export interface Publication {
   id: number;
   filename: string;
   filenameAlt: string | undefined;

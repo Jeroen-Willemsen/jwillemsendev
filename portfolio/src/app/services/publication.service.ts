@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {Document} from '../models/document.model';
+import {Publication} from '../models/publication.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DocumentService {
-  private documents: Document[] = [
+export class PublicationService {
+  private documents: Publication[] = [
     {
       id: 0,
       filename: 'revised_dissertation_jeroen_willemsen.pdf',
@@ -131,7 +131,7 @@ export class DocumentService {
   constructor() {
   }
 
-  getDocuments(): Observable<Document[]> {
+  getDocuments(): Observable<Publication[]> {
     return of(this.documents);
   }
 }

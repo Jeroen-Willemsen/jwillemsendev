@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DocumentListComponent} from './document-list/document-list.component';
+import {PublicationListComponent} from './publication-list/publication-list.component';
 import {HangmanGameComponent} from '../side-projects/games/hangman-game/hangman-game.component';
 import {MemoryGameComponent} from '../side-projects/games/memory-game/memory-game.component';
 import {NgIf} from '@angular/common';
@@ -14,7 +14,7 @@ import {TheRetaLanguageComponent} from './the-reta-language/the-reta-language.co
   selector: 'app-linguistics',
   standalone: true,
   imports: [
-    DocumentListComponent,
+    PublicationListComponent,
     NgIf,
     PopularScienceComponent,
     PublicationsComponent,

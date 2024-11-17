@@ -1,15 +1,36 @@
-import { Component } from '@angular/core';
-import {PublicationListComponent} from '../publication-list/publication-list.component';
+import {Component, OnInit} from '@angular/core';
+import {PublicationService} from '../../../services/publication.service';
+import {Publication} from '../../../models/publication.model';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-publications',
   standalone: true,
   imports: [
-    PublicationListComponent
+    NgForOf
   ],
   templateUrl: './publications.component.html',
   styleUrl: './publications.component.scss'
 })
-export class PublicationsComponent {
+export class PublicationsComponent implements OnInit {
+  documents: Publication[] = [];
 
+  constructor(private documentService: PublicationService) {
+  }
+
+  ngOnInit(): void {
+    this.documentService.getDocuments().subscribe((docs) => {
+      this.documents = docs
+        .sort((a, b) => a.year - b.year)
+        .reverse();
+      // Custom Sorting Logic: If you need more complex sorting (e.g., sorting by multiple properties),
+      // you can extend the comparator function accordingly.
+      //  const sortedByYearThenName = [...entities].sort((a, b) => {
+      //   if (a.year !== b.year) {
+      //     return a.year - b.year;
+      //   }
+      //   return a.name.localeCompare(b.name);
+      // });
+    });
+  }
 }

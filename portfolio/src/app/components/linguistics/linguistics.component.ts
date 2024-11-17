@@ -1,11 +1,5 @@
 import {Component} from '@angular/core';
-import {PublicationListComponent} from './publication-list/publication-list.component';
-import {HangmanGameComponent} from '../side-projects/games/hangman-game/hangman-game.component';
-import {MemoryGameComponent} from '../side-projects/games/memory-game/memory-game.component';
 import {NgIf} from '@angular/common';
-import {SnakeGameComponent} from '../side-projects/games/snake-game/snake-game.component';
-import {TicTacToeComponent} from '../side-projects/games/tic-tac-toe/tic-tac-toe.component';
-import {WhackAMoleComponent} from '../side-projects/games/whack-a-mole/whack-a-mole.component';
 import {PopularScienceComponent} from './popular-science/popular-science.component';
 import {PublicationsComponent} from './publications/publications.component';
 import {TheRetaLanguageComponent} from './the-reta-language/the-reta-language.component';
@@ -14,7 +8,6 @@ import {TheRetaLanguageComponent} from './the-reta-language/the-reta-language.co
   selector: 'app-linguistics',
   standalone: true,
   imports: [
-    PublicationListComponent,
     NgIf,
     PopularScienceComponent,
     PublicationsComponent,

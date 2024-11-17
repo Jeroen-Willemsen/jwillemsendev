@@ -13,12 +13,18 @@ import {TheRetaLanguageComponent} from './the-reta-language/the-reta-language.co
 @Component({
   selector: 'app-linguistics',
   standalone: true,
-  imports: [DocumentListComponent, HangmanGameComponent, MemoryGameComponent, NgIf, SnakeGameComponent, TicTacToeComponent, WhackAMoleComponent, PopularScienceComponent, PublicationsComponent, TheRetaLanguageComponent],
+  imports: [
+    DocumentListComponent,
+    NgIf,
+    PopularScienceComponent,
+    PublicationsComponent,
+    TheRetaLanguageComponent
+  ],
   templateUrl: './linguistics.component.html',
   styleUrls: ['./linguistics.component.scss'],
 })
 export class LinguisticsComponent {
-  selectedTab: string = '';
+  selectedTab: string = 'app-publications';
 
   selectTab(tabName: string): void {
     this.selectedTab = tabName;

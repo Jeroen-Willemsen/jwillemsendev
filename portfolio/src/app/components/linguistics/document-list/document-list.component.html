@@ -1,11 +1,21 @@
 <div class="document-list">
-  <h2>Available Documents</h2>
   <ul>
     <li *ngFor="let doc of documents">
-      <h3>{{ doc.name }}</h3>
-      <p>{{ doc.description }}</p>
-      <a [href]="doc.url" download="{{ doc.name }}">Download</a><br>
-      <a [routerLink]="['/documents', doc.id]">View Details</a>
+      <h5>{{ doc.title }}</h5>
+      <h6>{{ doc.authors }}, {{ doc.year }}</h6>
+      @if (doc.urlAlt === undefined && doc.origlocAlt === undefined) {
+        <h6>
+          <a [href]="doc.url" download="{{ doc.filename }}">pre-print</a> &#x7c;
+          <a [href]="doc.origloc" target='_blank'>publication</a>
+        </h6>
+      } @else {
+        <h6>
+          <a [href]="doc.url" download="{{ doc.filename }}">open revised dissertation</a> &#x7c;
+          <a [href]="doc.urlAlt" download="{{ doc.filename }}">open original submission</a><br>
+          <a [href]="doc.origloc" target='_blank'>navigate to revised</a> &#x7c;
+          <a [href]="doc.origlocAlt" target='_blank'>navigate to original</a>
+        </h6>
+      }
     </li>
   </ul>
 </div>

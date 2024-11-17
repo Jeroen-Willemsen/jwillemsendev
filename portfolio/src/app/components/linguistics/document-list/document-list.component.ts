@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DocumentService} from '../../../services/document.service';
 import {Document} from '../../../models/document.model';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -9,7 +9,8 @@ import {RouterLink} from '@angular/router';
   standalone: true,
   imports: [
     NgForOf,
-    RouterLink
+    RouterLink,
+    NgIf
   ],
   templateUrl: './document-list.component.html',
   styleUrls: ['./document-list.component.scss'],
@@ -25,4 +26,6 @@ export class DocumentListComponent implements OnInit {
       this.documents = docs;
     });
   }
+
+  protected readonly window = window;
 }

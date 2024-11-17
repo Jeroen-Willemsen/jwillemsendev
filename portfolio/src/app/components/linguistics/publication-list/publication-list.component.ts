@@ -23,7 +23,9 @@ export class PublicationListComponent implements OnInit {
 
   ngOnInit(): void {
     this.documentService.getDocuments().subscribe((docs) => {
-      this.documents = docs;
+      this.documents = docs
+        .sort((a, b) => a.year - b.year)
+        .reverse();
     });
   }
 

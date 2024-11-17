@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let doc of documents">
       <h5>{{ doc.title }}</h5>
-      <h6>{{ doc.authors }}, {{ doc.year }}</h6>
+      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
       @if (doc.urlAlt === undefined && doc.origlocAlt === undefined) {
         <h6>
           <a [href]="doc.url" download="{{ doc.filename }}">pre-print</a> &#x7c;

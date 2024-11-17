@@ -47,7 +47,7 @@ export class PublicationService {
       origloc: 'https://iacpl.net/jopol/issues/journal-of-postcolonial-linguistics-52021/the-sloped-worlds-of-the-reta-language/',
       origlocAlt: undefined,
       title: 'The sloped world(s) of the Reta language: ' +
-        'The expression of elevation in a montane language community. ',
+        'The expression of elevation in a montane language community',
       reference: 'Willemsen, J. (2021). The sloped world(s) of the Reta language: ' +
         'The expression of elevation in a montane language community. ' +
         'Journal of Postcolonial Linguistics, 5, 143–177. ' +
@@ -80,8 +80,8 @@ export class PublicationService {
       filenameAlt: undefined,
       origloc: 'https://www.degruyter.com/document/doi/10.1515/flin-2021-2004/html?lang=en',
       origlocAlt: undefined,
-      title: 'Vestigial phonaesthemic alternations in West Flemish: ' +
-        'consonantal play as evidence for the emergence of phonaesthesia through language contact.',
+      title: 'Phonaesthemic alternations in Flemish dialects:' +
+        'a matter of language contact in the emergence of phonaesthesia?',
       reference: 'Robbe, J. and Willemsen, J. (2022)' +
         'Phonaesthemic alternations in Flemish dialects:' +
         'a matter of language contact in the emergence of phonaesthesia?' +
@@ -100,7 +100,7 @@ export class PublicationService {
       origlocAlt: undefined,
       title: 'Review of LexiRumah 3.0.0.',
       reference: 'Willemsen, J & Goldshtein, Y. (2020).' +
-        'Review of LexiRumah 3.0.0.' +
+        'Review of LexiRumah 3.0.0' +
         'Language Documentation & Conservation 14. 692-702.',
       description: 'description',
       url: 'assets/documents/lexirumah_review_preprint.pdf',

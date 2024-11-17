@@ -5,4 +5,5 @@ export interface PopularScienceArticle {
   url: string;
   authors: string;
   year: number;
+  language: "English" | "Dutch" | "Danish";
 }

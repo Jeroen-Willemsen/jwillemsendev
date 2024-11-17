@@ -1,1 +1,10 @@
-<p>popular-science works!</p>
+<div>
+  <ul>
+    <li *ngFor="let doc of articles">
+      <h5>{{ doc.title }}</h5>
+      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+      <h6>{{ doc.url }}</h6>
+    </li>
+  </ul>
+</div>
+

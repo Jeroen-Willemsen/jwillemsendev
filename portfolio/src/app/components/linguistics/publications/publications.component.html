@@ -1,6 +1,6 @@
 <div>
   <ul>
-    <li *ngFor="let doc of documents">
+    <li *ngFor="let doc of publications">
       <h5>{{ doc.title }}</h5>
       <h6>{{ doc.year }}, {{ doc.authors }}</h6>
       @if (doc.urlAlt === undefined && doc.origlocAlt === undefined) {

@@ -13,16 +13,17 @@ import {NgForOf} from '@angular/common';
   styleUrl: './publications.component.scss'
 })
 export class PublicationsComponent implements OnInit {
-  documents: Publication[] = [];
+  publications: Publication[] = [];
 
-  constructor(private documentService: PublicationService) {
+  constructor(private publicationService: PublicationService) {
   }
 
   ngOnInit(): void {
-    this.documentService.getDocuments().subscribe((docs) => {
-      this.documents = docs
-        .sort((a, b) => a.year - b.year)
-        .reverse();
+    this.publicationService.getPublications()
+      .subscribe((docs) => {
+        this.publications = docs
+          .sort((a, b) => a.year - b.year)
+          .reverse();
       // Custom Sorting Logic: If you need more complex sorting (e.g., sorting by multiple properties),
       // you can extend the comparator function accordingly.
       //  const sortedByYearThenName = [...entities].sort((a, b) => {

@@ -6,7 +6,7 @@ import {Publication} from '../models/publication.model';
   providedIn: 'root',
 })
 export class PublicationService {
-  private documents: Publication[] = [
+  private publications: Publication[] = [
     {
       id: 0,
       filename: 'revised_dissertation_jeroen_willemsen.pdf',
@@ -18,7 +18,7 @@ export class PublicationService {
         'A Grammar of Reta. Aarhus Universitet: PhD dissertation.',
       description: 'description',
       url: 'assets/documents/revised_dissertation_jeroen_willemsen.pdf',
-      urlAlt: 'assets/documents/dissertation_jeroen_willemsen.pdf',
+      urlAlt: 'assets/publications/dissertation_jeroen_willemsen.pdf',
       authors: 'Jeroen Willemsen',
       year: 2021
     },
@@ -128,10 +128,9 @@ export class PublicationService {
 
   ];
 
-  constructor() {
-  }
+  constructor() {}
 
-  getDocuments(): Observable<Publication[]> {
-    return of(this.documents);
+  getPublications(): Observable<Publication[]> {
+    return of(this.publications);
   }
 }

@@ -1,0 +1,37 @@
+<div class="tabs">
+  <button
+    [class.active]="selectedTab === 'app-hangman-game'"
+    (click)="selectTab('app-hangman-game')">
+    Hangman
+  </button>
+  <button
+    [class.active]="selectedTab === 'app-memory-game'"
+    (click)="selectTab('app-memory-game')">
+    Memory game
+  </button>
+  <button
+    [class.active]="selectedTab === 'app-snake-game'"
+    (click)="selectTab('app-snake-game')">
+    Snake game
+  </button>
+  <button
+    [class.active]="selectedTab === 'app-tic-tac-toe'"
+    (click)="selectTab('app-tic-tac-toe')">
+    Tic-tac-toe
+  </button>
+  <button
+    [class.active]="selectedTab === 'app-whack-a-mole'"
+    (click)="selectTab('app-whack-a-mole')">
+    Whack-a-mole
+  </button>
+</div>
+
+<div class="tab-content">
+  <app-hangman-game *ngIf="selectedTab === 'app-hangman-game'"></app-hangman-game>
+  <app-memory-game *ngIf="selectedTab === 'app-memory-game'"></app-memory-game>
+  <app-snake-game *ngIf="selectedTab === 'app-snake-game'"></app-snake-game>
+  <app-tic-tac-toe *ngIf="selectedTab === 'app-tic-tac-toe'"></app-tic-tac-toe>
+  <app-whack-a-mole *ngIf="selectedTab === 'app-whack-a-mole'"></app-whack-a-mole>
+</div>
+
+

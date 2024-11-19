@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {NgIf} from '@angular/common';
 
 @Component({
@@ -23,7 +23,8 @@ export class SnakeGameComponent implements AfterViewInit {
   canvasHeight: number = 400;
   gameOver: boolean = false; // Added gameOver flag
 
-  constructor() {}
+  constructor() {
+  }
 
   ngAfterViewInit(): void {
     this.canvas = <HTMLCanvasElement>document.getElementById('gameCanvas');
@@ -36,7 +37,7 @@ export class SnakeGameComponent implements AfterViewInit {
     if (this.gameInterval) {
       clearInterval(this.gameInterval);
     }
-    this.snake = [{ x: 9 * this.box, y: 10 * this.box }];
+    this.snake = [{x: 9 * this.box, y: 10 * this.box}];
     this.direction = 'RIGHT';
     this.generateFood();
     this.score = 0;
@@ -98,14 +99,14 @@ export class SnakeGameComponent implements AfterViewInit {
       snakeY < 0 ||
       snakeX >= this.canvasWidth ||
       snakeY >= this.canvasHeight ||
-      this.collision({ x: snakeX, y: snakeY }, this.snake)
+      this.collision({x: snakeX, y: snakeY}, this.snake)
     ) {
       clearInterval(this.gameInterval);
       this.gameOver = true; // Set game over flag
       return;
     }
 
-    let newHead = { x: snakeX, y: snakeY };
+    let newHead = {x: snakeX, y: snakeY};
 
     // Check if snake eats food
     if (snakeX === this.food.x && snakeY === this.food.y) {

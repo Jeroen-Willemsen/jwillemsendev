@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {Publication} from '../models/publication.model';
 import {PopularScienceArticle} from '../models/popular-science.article';
 
 @Injectable({
@@ -114,7 +113,7 @@ export class PopularScienceArticleService {
       description: 'description',
       url: 'https://www.sciencenordic.com/denmark-forskerzonen-language/2019-is-the-uns-international-year-of-indigenous-languages-and-we-need-it-to-be/1461854',
       authors: 'Jeroen Willemsen & Kristoffer Friis Bøegh',
-      year: 2019 ,
+      year: 2019,
       language: "English",
       type: "pop-sci"
     },
@@ -159,6 +158,7 @@ export class PopularScienceArticleService {
       type: "blog"
     }
   ];
+
   constructor() {
   }
 

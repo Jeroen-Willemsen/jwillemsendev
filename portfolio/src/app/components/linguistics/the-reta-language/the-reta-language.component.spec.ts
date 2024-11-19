@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TheRetaLanguageComponent } from './the-reta-language.component';
+import {TheRetaLanguageComponent} from './the-reta-language.component';
 
 describe('TheRetaLanguageComponent', () => {
   let component: TheRetaLanguageComponent;
@@ -10,7 +10,7 @@ describe('TheRetaLanguageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [TheRetaLanguageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TheRetaLanguageComponent);
     component = fixture.componentInstance;

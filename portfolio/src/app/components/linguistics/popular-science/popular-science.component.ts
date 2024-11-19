@@ -24,7 +24,8 @@ export class PopularScienceComponent implements OnInit {
   blogEN: PopularScienceArticle[];
   blogDK: PopularScienceArticle[];
 
-  constructor(private popularScienceArticleService: PopularScienceArticleService) {}
+  constructor(private popularScienceArticleService: PopularScienceArticleService) {
+  }
 
   ngOnInit(): void {
     this.popularScienceArticleService.getOverview()

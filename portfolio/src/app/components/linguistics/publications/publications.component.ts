@@ -24,14 +24,14 @@ export class PublicationsComponent implements OnInit {
         this.publications = docs
           .sort((a, b) => a.year - b.year)
           .reverse();
-      // Custom Sorting Logic: If you need more complex sorting (e.g., sorting by multiple properties),
-      // you can extend the comparator function accordingly.
-      //  const sortedByYearThenName = [...entities].sort((a, b) => {
-      //   if (a.year !== b.year) {
-      //     return a.year - b.year;
-      //   }
-      //   return a.name.localeCompare(b.name);
-      // });
-    });
+        // Custom Sorting Logic: If you need more complex sorting (e.g., sorting by multiple properties),
+        // you can extend the comparator function accordingly.
+        //  const sortedByYearThenName = [...entities].sort((a, b) => {
+        //   if (a.year !== b.year) {
+        //     return a.year - b.year;
+        //   }
+        //   return a.name.localeCompare(b.name);
+        // });
+      });
   }
 }

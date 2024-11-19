@@ -18,11 +18,6 @@ import {TheRetaLanguageComponent} from './the-reta-language/the-reta-language.co
 })
 export class LinguisticsComponent {
   selectedTab: string = 'app-publications';
-
-  selectTab(tabName: string): void {
-    this.selectedTab = tabName;
-  }
-
   projects = [
     {
       title: 'Project A',
@@ -35,4 +30,8 @@ export class LinguisticsComponent {
       image: 'assets/images/project-b.jpg',
     },
   ];
+
+  selectTab(tabName: string): void {
+    this.selectedTab = tabName;
+  }
 }

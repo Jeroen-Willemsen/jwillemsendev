@@ -1,9 +1,9 @@
 <div class="game">
   <h2 style="margin-top: 0">Snake Game</h2>
   <canvas
-    id="gameCanvas"
+    [attr.height]="canvasHeight"
     [attr.width]="canvasWidth"
-    [attr.height]="canvasHeight">
+    id="gameCanvas">
   </canvas>
   <p>Score: {{ score }}</p>
   <p *ngIf="gameOver">Game Over!</p> <!-- Display game over message -->

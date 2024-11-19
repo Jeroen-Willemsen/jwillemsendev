@@ -1,10 +1,54 @@
 <div>
+  <h3 *ngIf="popsciAll.length > 0">Popular science articles</h3>
   <ul>
-    <li *ngFor="let doc of articles">
+    <h4 *ngIf="popsciEN.length > 0">English</h4>
+    <li *ngFor="let doc of popsciEN">
       <h5>{{ doc.title }}</h5>
       <h6>{{ doc.year }}, {{ doc.authors }}</h6>
-      <h6>{{ doc.url }}</h6>
+      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+    </li>
+  </ul>
+  <ul>
+    <h4 *ngIf="popsciNL.length > 0">Dutch</h4>
+    <li *ngFor="let doc of popsciNL">
+      <h5>{{ doc.title }}</h5>
+      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+    </li>
+  </ul>
+  <ul>
+    <h4 *ngIf="popsciDK.length > 0">Danish</h4>
+    <li *ngFor="let doc of popsciDK">
+      <h5>{{ doc.title }}</h5>
+      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
     </li>
   </ul>
 </div>
-
+<div>
+  <h3 *ngIf="blogAll.length > 0">Blogs</h3>
+  <ul>
+    <h4 *ngIf="blogEN.length > 0">English</h4>
+    <li *ngFor="let doc of blogEN">
+      <h5>{{ doc.title }}</h5>
+      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+    </li>
+  </ul>
+  <ul>
+    <h4 *ngIf="blogNL.length > 0">Dutch</h4>
+    <li *ngFor="let doc of blogNL">
+      <h5>{{ doc.title }}</h5>
+      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+    </li>
+  </ul>
+  <ul>
+    <h4 *ngIf="blogDK.length > 0">Danish</h4>
+    <li *ngFor="let doc of blogDK">
+      <h5>{{ doc.title }}</h5>
+      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+    </li>
+  </ul>
+</div>

@@ -15,7 +15,8 @@ export class PopularScienceArticleService {
       url: 'https://www.lingoblog.dk/en/can-sounds-have-meaning-the-peculiar-case-of-west-flemish-tj-and-dj/',
       authors: 'Jeroen Willemsen & Joost Robbe',
       year: 2020,
-      language: "English"
+      language: "English",
+      type: "blog"
     },
     {
       id: 1,
@@ -24,7 +25,8 @@ export class PopularScienceArticleService {
       url: 'https://www.lingoblog.dk/en/microphone-in-the-mud-by-laura-robinson/',
       authors: 'Jeroen Willemsen',
       year: 2019,
-      language: "English"
+      language: "English",
+      type: "blog"
     },
     {
       id: 2,
@@ -33,7 +35,8 @@ export class PopularScienceArticleService {
       url: 'https://www.lingoblog.dk/en/2019-international-year-of-indigenous-languages/',
       authors: 'Jeroen Willemsen',
       year: 2019,
-      language: "English"
+      language: "English",
+      type: "blog"
     },
     {
       id: 3,
@@ -42,7 +45,8 @@ export class PopularScienceArticleService {
       url: 'https://www.lingoblog.dk/en/fieldwork-in-the-amazon-rainforest-an-interview-with-ana-paulla-braga-mattos/',
       authors: ' Jeroen Willemsen, Ana Paulla Braga Mattos & Kristoffer Friis Bøegh',
       year: 2018,
-      language: "English"
+      language: "English",
+      type: "blog"
     },
     {
       id: 4,
@@ -51,7 +55,8 @@ export class PopularScienceArticleService {
       url: 'https://www.lingoblog.dk/en/fieldwork-in-saint-croix-an-interview-with-kristoffer-friis-boeegh/',
       authors: 'Jeroen Willemsen, Ana Paulla Braga Mattos & Kristoffer Friis Bøegh',
       year: 2018,
-      language: "English"
+      language: "English",
+      type: "blog"
     },
     {
       id: 5,
@@ -60,7 +65,8 @@ export class PopularScienceArticleService {
       url: 'https://www.lingoblog.dk/en/why-are-there-so-many-different-types-of-r/',
       authors: 'Andrea Brink Siem & Jeroen Willemsen',
       year: 2018,
-      language: "English"
+      language: "English",
+      type: "blog"
     },
     {
       id: 6,
@@ -69,16 +75,18 @@ export class PopularScienceArticleService {
       url: 'https://www.lingoblog.dk/en/interview-with-william-mcgregor/',
       authors: 'Jeroen Willemsen',
       year: 2018,
-      language: "English"
+      language: "English",
+      type: "blog"
     },
     {
       id: 7,
-      title: '',
+      title: 'Fieldwork in Nusa Tenggara Timur – an interview with Jeroen Willemsen',
       description: 'description',
       url: 'https://www.lingoblog.dk/en/fieldwork-in-nusa-tenggara-timur-an-interview-with-jeroen-willemsen/',
       authors: ' Jeroen Willemsen, Ana Paulla Braga Mattos & Kristoffer Friis Bøegh',
       year: 2018,
-      language: "English"
+      language: "English",
+      type: "blog"
     },
     {
       id: 8,
@@ -87,7 +95,8 @@ export class PopularScienceArticleService {
       url: 'https://www.lingoblog.dk/nl/kunnen-klanken-betekenis-hebben-het-bizarre-geval-van-de-west-vlaamse-tj-en-dj/',
       authors: 'Jeroen Willemsen & Joost Robbe',
       year: 2020,
-      language: "Dutch"
+      language: "Dutch",
+      type: "blog"
     },
     {
       id: 9,
@@ -96,7 +105,8 @@ export class PopularScienceArticleService {
       url: 'https://www.lingoblog.dk/nl/2019-internationaal-jaar-van-de-inheemse-talen/',
       authors: 'Jeroen Willemsen',
       year: 2019,
-      language: "Dutch"
+      language: "Dutch",
+      type: "blog"
     },
     {
       id: 10,
@@ -105,7 +115,8 @@ export class PopularScienceArticleService {
       url: 'https://www.sciencenordic.com/denmark-forskerzonen-language/2019-is-the-uns-international-year-of-indigenous-languages-and-we-need-it-to-be/1461854',
       authors: 'Jeroen Willemsen & Kristoffer Friis Bøegh',
       year: 2019 ,
-      language: "English"
+      language: "English",
+      type: "pop-sci"
     },
     {
       id: 11,
@@ -114,7 +125,8 @@ export class PopularScienceArticleService {
       url: 'https://videnskab.dk/kultur-samfund/sprogforskere-advarer-halvdelen-af-verdens-sprog-risikerer-at-uddoe-inden-udgangen-af-dette-aarhundrede/',
       authors: 'Jeroen Willemsen & Kristoffer Friis Bøegh',
       year: 2019,
-      language: "Danish"
+      language: "Danish",
+      type: "pop-sci"
     },
     {
       id: 12,
@@ -122,8 +134,9 @@ export class PopularScienceArticleService {
       description: 'description',
       url: 'https://www.sciencenordic.com/denmark-forskerzonen-linguistics/linguists-need-preservation-of-languages-to-study-human-language/1553443',
       authors: 'Jeroen Willemsen & Kristoffer Friis Bøegh',
-      year: 2029,
-      language: "English"
+      year: 2019,
+      language: "English",
+      type: "pop-sci"
     },
     {
       id: 13,
@@ -132,9 +145,19 @@ export class PopularScienceArticleService {
       url: 'https://videnskab.dk/kultur-samfund/lingvister-har-brug-for-sprogbevaring-for-at-studere-sprog-som-menneskeligt-faenomen/',
       authors: 'Jeroen Willemsen & Kristoffer Friis Bøegh',
       year: 2019,
-      language: "Danish"
+      language: "Danish",
+      type: "pop-sci"
     },
-
+    {
+      id: 13,
+      title: 'Creoles, fieldwork and linguistic theory – an interview with Peter Bakker',
+      description: 'description',
+      url: '/https://www.lingoblog.dk/en/interview-with-peter-bakker/',
+      authors: 'Jeroen Willemsen & Kristoffer Friis Bøegh',
+      year: 2019,
+      language: "English",
+      type: "blog"
+    }
   ];
   constructor() {
   }

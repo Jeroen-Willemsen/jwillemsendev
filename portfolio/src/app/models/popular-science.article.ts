@@ -6,4 +6,5 @@ export interface PopularScienceArticle {
   authors: string;
   year: number;
   language: "English" | "Dutch" | "Danish";
+  type: "pop-sci" | "blog";
 }

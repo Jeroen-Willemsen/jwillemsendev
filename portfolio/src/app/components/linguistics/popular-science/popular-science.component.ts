@@ -1,19 +1,28 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PopularScienceArticle} from '../../../models/popular-science.article';
 import {PopularScienceArticleService} from '../../../services/popular-science-article.service';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-popular-science',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   templateUrl: './popular-science.component.html',
   styleUrl: './popular-science.component.scss'
 })
-export class PopularScienceComponent {
-  articles: PopularScienceArticle[]
+export class PopularScienceComponent implements OnInit {
+  articles: PopularScienceArticle[];
+  popsciAll: PopularScienceArticle[];
+  popsciNL: PopularScienceArticle[];
+  popsciEN: PopularScienceArticle[];
+  popsciDK: PopularScienceArticle[];
+  blogAll: PopularScienceArticle[];
+  blogNL: PopularScienceArticle[];
+  blogEN: PopularScienceArticle[];
+  blogDK: PopularScienceArticle[];
 
   constructor(private popularScienceArticleService: PopularScienceArticleService) {}
 
@@ -23,14 +32,14 @@ export class PopularScienceComponent {
         this.articles = docs
           .sort((a, b) => a.year - b.year)
           .reverse();
-        // Custom Sorting Logic: If you need more complex sorting (e.g., sorting by multiple properties),
-        // you can extend the comparator function accordingly.
-        //  const sortedByYearThenName = [...entities].sort((a, b) => {
-        //   if (a.year !== b.year) {
-        //     return a.year - b.year;
-        //   }
-        //   return a.name.localeCompare(b.name);
-        // });
+        this.popsciAll = this.articles.filter(article => article.type === "pop-sci");
+        this.blogAll = this.articles.filter(article => article.type === "blog");
+        this.popsciNL = this.popsciAll.filter(article => article.language === "Dutch");
+        this.popsciEN = this.popsciAll.filter(article => article.language === "English");
+        this.popsciDK = this.popsciAll.filter(article => article.language === "Danish");
+        this.blogNL = this.blogAll.filter(article => article.language === "Dutch");
+        this.blogEN = this.blogAll.filter(article => article.language === "English");
+        this.blogDK = this.blogAll.filter(article => article.language === "Danish");
       });
   }
 }

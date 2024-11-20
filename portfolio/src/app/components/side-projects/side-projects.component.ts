@@ -15,7 +15,7 @@ import {NgIf} from '@angular/common';
   styleUrl: './side-projects.component.scss'
 })
 export class SideProjectsComponent {
-  selectedTab: string = '';
+  selectedTab: string = 'app-games';
 
   selectTab(tabName: string): void {
     this.selectedTab = tabName;

@@ -18,11 +18,12 @@ $portfolio-theme: mat.define-theme((
 }
 
 :root {
-  --primary-color: #2e2e2e; /* Dark gray */
-  --secondary-color: #ffffff; /* White */
-  --accent-color: #7f8c8d; /* Muted blue-gray */
-  --background-color: #f5f5f5; /* Light gray */
-  --text-color: #333333; /* Dark text */
+  --primary-color: #2e2e2e;
+  --secondary-color: #ffffff;
+  --accent-color: #526868;
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --light-background-color: #c9cdcd;
 }
 
 body {
@@ -56,7 +57,7 @@ body {
 
 .tabs {
   display: flex;
-  padding: 5px;
+  padding-top: 5px;
 }
 
 .tabs button {
@@ -74,5 +75,28 @@ body {
 }
 
 .tab-content {
-  padding: 5px;
+  padding: 0;
+}
+
+.code-block {
+  background-color: var(--light-background-color);
+  width: 75vw;
+  font-size: small;
+  margin: 0 auto
+}
+
+.paragraph-block {
+  background-color: var(--background-color);
+  width: 75vw;
+  margin: 0.5em auto 0 auto;
+  font-size: small;
+  text-justify: distribute-all-lines;
+}
+
+h5 {
+  margin: 5px 0 0 0 !important;
+}
+
+h6 {
+  margin: 0 !important;
 }

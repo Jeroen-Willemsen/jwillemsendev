@@ -4,6 +4,7 @@ import {DevelopmentSkillsComponent} from './components/programming/development-s
 import {HangmanGameComponent} from './components/programming/side-projects/games/hangman-game/hangman-game.component';
 import {LinguisticsComponent} from './components/linguistics/linguistics.component';
 import {MemoryGameComponent} from './components/programming/side-projects/games/memory-game/memory-game.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {ProgrammingComponent} from './components/programming/programming.component';
 import {Routes} from '@angular/router';
 import {SideProjectsComponent} from './components/programming/side-projects/side-projects.component';
@@ -26,5 +27,5 @@ export const routes: Routes = [
   {path: 'tic-tac-toe', component: TicTacToeComponent},
   {path: 'typing-speed-test', component: TypingSpeedTestComponent},
   {path: 'whack-a-mole-game', component: WhackAMoleComponent},
-  // {path: '**', component: PageNotFoundComponent},
+  {path: '**', component: PageNotFoundComponent},
 ];

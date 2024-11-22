@@ -12,7 +12,7 @@ import {NgIf} from '@angular/common';
     PythonApplicationsComponent
   ],
   templateUrl: './side-projects.component.html',
-  styleUrl: './side-projects.component.scss'
+  styleUrl: '../../../app.component.scss'
 })
 export class SideProjectsComponent {
   selectedTab: string = 'app-games';

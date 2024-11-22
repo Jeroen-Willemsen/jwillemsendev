@@ -1,7 +1,7 @@
 import {AboutMeComponent} from './components/about-me/about-me.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {ContactMeComponent} from './components/contact-me/contact-me.component';
-import {DevelopmentSkillsComponent} from "./components/about-me/development-skills/development-skills.component";
+import {DevelopmentSkillsComponent} from "./components/programming/development-skills/development-skills.component";
 import {HangmanGameComponent} from './components/side-projects/games/hangman-game/hangman-game.component';
 import {HIGHLIGHT_OPTIONS, HighlightModule} from 'ngx-highlightjs';
 import {LinguisticsComponent} from './components/linguistics/linguistics.component';
@@ -37,5 +37,4 @@ import {MatExpansionModule} from '@angular/material/expansion';
   },
   ]
 })
-export class AppModule {
-}
+export class AppModule {}

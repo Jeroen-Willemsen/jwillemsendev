@@ -27,13 +27,12 @@ import {SkillCategory} from '../../../models/skill.model';
     NgIf,
   ],
   templateUrl: './development-skills.component.html',
-  styleUrl: './development-skills.component.scss',
+  styleUrl: '../../../app.component.scss'
 })
 export class DevelopmentSkillsComponent implements OnInit {
   categories: SkillCategory[] = [];
 
-  constructor(private developmentSkillsService: DevelopmentSkillsService) {
-  }
+  constructor(private developmentSkillsService: DevelopmentSkillsService) {}
 
   ngOnInit(): void {
     this.developmentSkillsService.getSkillCategories()

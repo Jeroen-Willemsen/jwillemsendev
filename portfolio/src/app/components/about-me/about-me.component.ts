@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DevelopmentSkillsComponent} from './development-skills/development-skills.component';
+import {DevelopmentSkillsComponent} from '../programming/development-skills/development-skills.component';
 
 @Component({
   selector: 'app-about-me',

@@ -14,7 +14,7 @@ import {NgIf} from '@angular/common';
     SimpleDutchWeatherAppComponent,
   ],
   templateUrl: './python-applications.component.html',
-  styleUrl: './python-applications.component.scss'
+  styleUrl: '../../../../app.component.scss'
 })
 export class PythonApplicationsComponent {
   selectedTab: string = 'app-ipa-picker-latex-converter';

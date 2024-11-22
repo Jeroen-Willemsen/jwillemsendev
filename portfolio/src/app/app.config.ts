@@ -1,9 +1,9 @@
 import {ApplicationConfig, importProvidersFrom, provideZoneChangeDetection} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {provideHighlightOptions} from 'ngx-highlightjs';
 import {provideHttpClient} from '@angular/common/http';
 import {provideRouter} from '@angular/router';
 import {routes} from './app.routes';
-import {provideHighlightOptions} from 'ngx-highlightjs';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [

@@ -20,7 +20,7 @@ import {WhackAMoleComponent} from './whack-a-mole/whack-a-mole.component';
     WhackAMoleComponent,
   ],
   templateUrl: './games.component.html',
-  styleUrl: './games.component.scss'
+  styleUrl: '../../../../app.component.scss'
 })
 export class GamesComponent {
   selectedTab: string = 'app-hangman-game';

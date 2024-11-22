@@ -6,8 +6,8 @@
   <p>Attempts Left: {{ attemptsLeft }}</p>
   <div class="alphabet">
     <button
-      *ngFor="let letter of alphabet"
       (click)="guessLetter(letter)"
+      *ngFor="let letter of alphabet"
       [disabled]="guessedLetters.includes(letter) || gameOver">
       {{ letter | uppercase }}
     </button>

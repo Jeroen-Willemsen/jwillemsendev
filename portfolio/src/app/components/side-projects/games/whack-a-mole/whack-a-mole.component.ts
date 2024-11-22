@@ -19,9 +19,11 @@ export class WhackAMoleComponent implements OnInit, OnDestroy {
   timerInterval: any;
   gameActive: boolean = false;
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   ngOnDestroy(): void {
     this.endGame();

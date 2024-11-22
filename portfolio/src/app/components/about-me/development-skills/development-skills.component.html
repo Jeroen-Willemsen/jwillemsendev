@@ -1,0 +1,17 @@
+<div class="skills-container">
+  <mat-card *ngFor="let category of categories" class="skill-card">
+    <mat-card-header>
+      <mat-card-title>{{ category.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ng-container *ngFor="let skill of category.skills">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header [collapsedHeight]="'20px'">
+            <mat-panel-title> {{ skill.name }}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p> {{ skill.info }} </p>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-card-content>
+  </mat-card>
+</div>

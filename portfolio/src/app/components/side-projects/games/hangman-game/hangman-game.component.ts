@@ -127,7 +127,12 @@ export class HangmanGameComponent implements OnInit {
   gameOver: boolean;
   won: boolean;
 
-  constructor() {}
+  constructor() {
+  }
+
+  get alphabet(): string[] {
+    return 'abcdefghijklmnopqrstuvwxyz'.split('');
+  }
 
   ngOnInit(): void {
     this.newGame();
@@ -168,9 +173,5 @@ export class HangmanGameComponent implements OnInit {
         this.gameOver = true;
       }
     }
-  }
-
-  get alphabet(): string[] {
-    return 'abcdefghijklmnopqrstuvwxyz'.split('');
   }
 }

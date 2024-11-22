@@ -128,9 +128,6 @@ export class PublicationService {
 
   ];
 
-  constructor() {
-  }
-
   getPublications(): Observable<Publication[]> {
     return of(this.publications);
   }

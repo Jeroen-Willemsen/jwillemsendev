@@ -1,23 +1,24 @@
 <div class="tabs">
   <button
-    [class.active]="selectedTab === 'app-ipa-picker-latex-converter'"
-    (click)="selectTab('app-ipa-picker-latex-converter')">
+    (click)="selectTab('app-ipa-picker-latex-converter')"
+    [class.active]="selectedTab === 'app-ipa-picker-latex-converter'">
     IPA Symbol picker and LaTeX converter
   </button>
   <button
-    [class.active]="selectedTab === 'app-simple-dutch-weather-app'"
-    (click)="selectTab('app-simple-dutch-weather-app')">
+    (click)="selectTab('app-simple-dutch-weather-app')"
+    [class.active]="selectedTab === 'app-simple-dutch-weather-app'">
     Simple Dutch weather app
   </button>
   <button
-    [class.active]="selectedTab === 'app-simple-calculator'"
-    (click)="selectTab('app-simple-calculator')">
+    (click)="selectTab('app-simple-calculator')"
+    [class.active]="selectedTab === 'app-simple-calculator'">
     Simple calculator
   </button>
 </div>
 
 <div class="tab-content">
-  <app-ipa-picker-latex-converter *ngIf="selectedTab === 'app-ipa-picker-latex-converter'"></app-ipa-picker-latex-converter>
+  <app-ipa-picker-latex-converter
+    *ngIf="selectedTab === 'app-ipa-picker-latex-converter'"></app-ipa-picker-latex-converter>
   <app-simple-dutch-weather-app *ngIf="selectedTab === 'app-simple-dutch-weather-app'"></app-simple-dutch-weather-app>
   <app-simple-calculator *ngIf="selectedTab === 'app-simple-calculator'"></app-simple-calculator>
 </div>

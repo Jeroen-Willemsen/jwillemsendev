@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {HighlightModule} from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-contact-me',
@@ -8,4 +7,5 @@ import {HighlightModule} from 'ngx-highlightjs';
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
-export class ContactMeComponent {}
+export class ContactMeComponent {
+}

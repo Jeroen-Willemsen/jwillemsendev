@@ -2,8 +2,8 @@
   <h2 style="margin-top: 0">Typing Speed Test</h2>
   <p class="text-to-type">{{ text }}</p>
   <textarea
-    [(ngModel)]="enteredText"
     (input)="onTextInput()"
+    [(ngModel)]="enteredText"
     [disabled]="timeLeft === 0"
   ></textarea>
   <p>Time Left: {{ timeLeft }} seconds</p>

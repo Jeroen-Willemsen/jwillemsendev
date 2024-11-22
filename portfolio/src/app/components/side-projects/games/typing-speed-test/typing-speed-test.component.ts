@@ -21,9 +21,11 @@ export class TypingSpeedTestComponent implements OnInit {
   isStarted: boolean = false;
   wpm: number = 0;
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   startTest(): void {
     if (!this.isStarted) {

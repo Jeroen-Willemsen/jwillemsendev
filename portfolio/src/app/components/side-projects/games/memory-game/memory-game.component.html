@@ -2,10 +2,10 @@
   <h2 style="margin-top: 0">Memory Matching Game</h2>
   <div class="board">
     <div
-      class="card"
-      *ngFor="let card of cards"
       (click)="flipCard(card)"
-      [class.flipped]="card.flipped || card.matched">
+      *ngFor="let card of cards"
+      [class.flipped]="card.flipped || card.matched"
+      class="card">
       <div class="card-inner">
         <div class="card-front">{{ card.image }}</div>
         <div class="card-back">❓</div>

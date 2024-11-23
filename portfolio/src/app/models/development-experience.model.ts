@@ -1,6 +1,6 @@
 export interface DevelopmentExperience {
   name: string;
-  info: string;
+  info: string[];
 }
 
 export interface DevelopmentExperienceCategory {

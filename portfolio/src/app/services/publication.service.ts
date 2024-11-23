@@ -17,7 +17,7 @@ export class PublicationService {
       reference: 'Willemsen, J. (2021).' +
         'A Grammar of Reta. Aarhus Universitet: PhD dissertation.',
       description: 'description',
-      url: 'assets/documents/revised_dissertation_jeroen_willemsen.pdf',
+      url: 'assets/articles/revised_dissertation_jeroen_willemsen.pdf',
       urlAlt: 'assets/publications/dissertation_jeroen_willemsen.pdf',
       authors: 'Jeroen Willemsen',
       year: 2021
@@ -35,7 +35,7 @@ export class PublicationService {
         'Phonaesthemic alternations in Reta and in other languages.' +
         'Studies in Language, 44(3), 659–699.',
       description: 'description',
-      url: 'assets/documents/expression_of_vulgarity_preprint.pdf',
+      url: 'assets/articles/expression_of_vulgarity_preprint.pdf',
       urlAlt: undefined,
       authors: 'Jeroen Willemsen & Ehm Hjorth Miltersen',
       year: 2020
@@ -53,7 +53,7 @@ export class PublicationService {
         'Journal of Postcolonial Linguistics, 5, 143–177. ' +
         'Special issue: Language and popular geopolitics.',
       description: 'description',
-      url: 'assets/documents/sloped_world_preprint.pdf',
+      url: 'assets/articles/sloped_world_preprint.pdf',
       urlAlt: undefined,
       authors: 'Jeroen Willemsen',
       year: 2021
@@ -69,7 +69,7 @@ export class PublicationService {
         'Papuan Languages of Timor, Alor and Pantar: Volume 3. Sketch Grammars, 187–266. ' +
         'Berlin: Mouton de Gruyter.',
       description: 'description',
-      url: 'assets/documents/reta_preprint.pdf',
+      url: 'assets/articles/reta_preprint.pdf',
       urlAlt: undefined,
       authors: 'Jeroen Willemsen',
       year: 2020
@@ -87,7 +87,7 @@ export class PublicationService {
         'a matter of language contact in the emergence of phonaesthesia?' +
         'Folia Linguistica, vol. 56(1), 57-86.',
       description: 'description',
-      url: 'assets/documents/vestigial_phonaesthemic_alternations_preprint.pdf',
+      url: 'assets/articles/vestigial_phonaesthemic_alternations_preprint.pdf',
       urlAlt: undefined,
       authors: 'Joost Roger Robbe & Jeroen Willemsen',
       year: 2022
@@ -103,7 +103,7 @@ export class PublicationService {
         'Review of LexiRumah 3.0.0' +
         'Language Documentation & Conservation 14. 692-702.',
       description: 'description',
-      url: 'assets/documents/lexirumah_review_preprint.pdf',
+      url: 'assets/articles/lexirumah_review_preprint.pdf',
       urlAlt: undefined,
       authors: 'Jeroen Willemsen & Yonatan Goldshtein',
       year: 2020
@@ -119,7 +119,7 @@ export class PublicationService {
         'Ladhams, J., Levisen, C., Markússon, J. S., Robbe, J. R. & Willemsen, J. (2020): ' +
         'On languages on islands, Acta Linguistica Hafniensia 52(1). 81-116.',
       description: 'description',
-      url: 'assets/documents/on_languages_on_islands_preprint.pdf',
+      url: 'assets/articles/on_languages_on_islands_preprint.pdf',
       urlAlt: undefined,
       authors: 'Joshua Nash, Peter Bakker, Kristoffer Friis Bøegh, Aymeric Daval-Markussen, Hartmut Haberland, ' +
         'Dale Kedwards, John Ladhams, Carsten Levisen, Jón Símon Markússon, Joost Robbe & Jeroen Willemsen',

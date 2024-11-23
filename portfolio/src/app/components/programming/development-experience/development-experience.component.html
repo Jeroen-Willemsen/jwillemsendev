@@ -7,9 +7,9 @@
       <ng-container *ngFor="let experience of category.experiences">
         <mat-expansion-panel>
           <mat-expansion-panel-header [collapsedHeight]="'20px'">
-            <mat-panel-title> {{ experience.name }}</mat-panel-title>
+            <mat-panel-title><b> {{ experience.name }} </b></mat-panel-title>
           </mat-expansion-panel-header>
-          <p> {{ experience.info }} </p>
+          <p *ngFor="let line of experience.info" [innerHTML]="line"><br></p>
         </mat-expansion-panel>
       </ng-container>
     </mat-card-content>

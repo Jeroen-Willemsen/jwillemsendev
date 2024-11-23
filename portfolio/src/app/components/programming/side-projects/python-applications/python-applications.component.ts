@@ -3,6 +3,7 @@ import {SimpleCalculatorComponent} from './simple-calculator/simple-calculator.c
 import {SimpleDutchWeatherAppComponent} from './simple-dutch-weather-app/simple-dutch-weather-app.component';
 import {IpaPickerLatexConverterComponent} from './ipa-picker-latex-converter/ipa-picker-latex-converter.component';
 import {NgIf} from '@angular/common';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-python-applications',
@@ -14,7 +15,15 @@ import {NgIf} from '@angular/common';
     SimpleDutchWeatherAppComponent,
   ],
   templateUrl: './python-applications.component.html',
-  styleUrl: '../../../../app.component.scss'
+  styleUrl: '../../../../app.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class PythonApplicationsComponent {
   selectedTab: string = 'app-ipa-picker-latex-converter';

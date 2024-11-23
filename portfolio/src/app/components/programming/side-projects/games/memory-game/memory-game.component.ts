@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Card} from '../../../../../models/card.model';
 import {NgForOf} from '@angular/common';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-memory-game',
@@ -9,7 +10,15 @@ import {NgForOf} from '@angular/common';
     NgForOf
   ],
   templateUrl: './memory-game.component.html',
-  styleUrl: './memory-game.component.scss'
+  styleUrl: './memory-game.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class MemoryGameComponent implements OnInit {
   cards: Card[] = [];

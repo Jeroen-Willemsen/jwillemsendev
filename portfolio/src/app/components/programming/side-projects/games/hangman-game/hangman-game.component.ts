@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForOf, NgIf, UpperCasePipe} from '@angular/common';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-hangman-game',
@@ -13,7 +14,15 @@ import {NgForOf, NgIf, UpperCasePipe} from '@angular/common';
     NgIf
   ],
   templateUrl: './hangman-game.component.html',
-  styleUrl: './hangman-game.component.scss'
+  styleUrl: './hangman-game.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class HangmanGameComponent implements OnInit {
   words: string[] = [

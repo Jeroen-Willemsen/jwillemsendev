@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PopularScienceArticle} from '../../../models/popular-science.article';
 import {PopularScienceArticleService} from '../../../services/popular-science-article.service';
 import {NgForOf, NgIf} from '@angular/common';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-popular-science',
@@ -11,7 +12,15 @@ import {NgForOf, NgIf} from '@angular/common';
     NgIf
   ],
   templateUrl: './popular-science.component.html',
-  styleUrl: './popular-science.component.scss'
+  styleUrl: './popular-science.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class PopularScienceComponent implements OnInit {
   articles: PopularScienceArticle[];

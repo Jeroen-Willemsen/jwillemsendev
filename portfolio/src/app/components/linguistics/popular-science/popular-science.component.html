@@ -1,54 +1,57 @@
-<div style="margin-left: 1em">
-  <h4 *ngIf="popsciAll.length > 0">Popular science articles</h4>
-  <ul>
-    <h5 *ngIf="popsciEN.length > 0">English</h5>
-    <li *ngFor="let doc of popsciEN">
-      <h5>{{ doc.title }}</h5>
-      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
-      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
-    </li>
-  </ul>
-  <ul>
-    <h5 *ngIf="popsciNL.length > 0">Dutch</h5>
-    <li *ngFor="let doc of popsciNL">
-      <h5>{{ doc.title }}</h5>
-      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
-      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
-    </li>
-  </ul>
-  <ul>
-    <h5 *ngIf="popsciDK.length > 0">Danish</h5>
-    <li *ngFor="let doc of popsciDK">
-      <h5>{{ doc.title }}</h5>
-      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
-      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
-    </li>
-  </ul>
+<div [@fadeIn]>
+  <div style="margin-left: 1em">
+    <h4 *ngIf="popsciAll.length > 0">Popular science articles</h4>
+    <ul>
+      <h5 *ngIf="popsciEN.length > 0">English</h5>
+      <li *ngFor="let doc of popsciEN">
+        <h5>{{ doc.title }}</h5>
+        <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+        <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+      </li>
+    </ul>
+    <ul>
+      <h5 *ngIf="popsciNL.length > 0">Dutch</h5>
+      <li *ngFor="let doc of popsciNL">
+        <h5>{{ doc.title }}</h5>
+        <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+        <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+      </li>
+    </ul>
+    <ul>
+      <h5 *ngIf="popsciDK.length > 0">Danish</h5>
+      <li *ngFor="let doc of popsciDK">
+        <h5>{{ doc.title }}</h5>
+        <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+        <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+      </li>
+    </ul>
+  </div>
+  <div style="margin-left: 1em">
+    <h4 *ngIf="blogAll.length > 0">Blogs</h4>
+    <ul>
+      <h5 *ngIf="blogEN.length > 0">English</h5>
+      <li *ngFor="let doc of blogEN">
+        <h5>{{ doc.title }}</h5>
+        <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+        <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+      </li>
+    </ul>
+    <ul>
+      <h5 *ngIf="blogNL.length > 0">Dutch</h5>
+      <li *ngFor="let doc of blogNL">
+        <h5>{{ doc.title }}</h5>
+        <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+        <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+      </li>
+    </ul>
+    <ul>
+      <h5 *ngIf="blogDK.length > 0">Danish</h5>
+      <li *ngFor="let doc of blogDK">
+        <h5>{{ doc.title }}</h5>
+        <h6>{{ doc.year }}, {{ doc.authors }}</h6>
+        <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
+      </li>
+    </ul>
+  </div>
 </div>
-<div style="margin-left: 1em">
-  <h4 *ngIf="blogAll.length > 0">Blogs</h4>
-  <ul>
-    <h5 *ngIf="blogEN.length > 0">English</h5>
-    <li *ngFor="let doc of blogEN">
-      <h5>{{ doc.title }}</h5>
-      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
-      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
-    </li>
-  </ul>
-  <ul>
-    <h5 *ngIf="blogNL.length > 0">Dutch</h5>
-    <li *ngFor="let doc of blogNL">
-      <h5>{{ doc.title }}</h5>
-      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
-      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
-    </li>
-  </ul>
-  <ul>
-    <h5 *ngIf="blogDK.length > 0">Danish</h5>
-    <li *ngFor="let doc of blogDK">
-      <h5>{{ doc.title }}</h5>
-      <h6>{{ doc.year }}, {{ doc.authors }}</h6>
-      <h6><a [href]="doc.url" target='_blank'>visit article</a></h6>
-    </li>
-  </ul>
-</div>
+

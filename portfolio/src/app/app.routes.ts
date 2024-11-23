@@ -1,6 +1,8 @@
 import {AboutMeComponent} from './components/about-me/about-me.component';
 import {ContactMeComponent} from './components/contact-me/contact-me.component';
-import {DevelopmentExperienceComponent} from './components/programming/development-experience/development-experience.component';
+import {
+  DevelopmentExperienceComponent
+} from './components/programming/development-experience/development-experience.component';
 import {HangmanGameComponent} from './components/programming/side-projects/games/hangman-game/hangman-game.component';
 import {LinguisticsComponent} from './components/linguistics/linguistics.component';
 import {MemoryGameComponent} from './components/programming/side-projects/games/memory-game/memory-game.component';
@@ -10,7 +12,9 @@ import {Routes} from '@angular/router';
 import {SideProjectsComponent} from './components/programming/side-projects/side-projects.component';
 import {SnakeGameComponent} from './components/programming/side-projects/games/snake-game/snake-game.component';
 import {TicTacToeComponent} from './components/programming/side-projects/games/tic-tac-toe/tic-tac-toe.component';
-import {TypingSpeedTestComponent} from './components/programming/side-projects/games/typing-speed-test/typing-speed-test.component';
+import {
+  TypingSpeedTestComponent
+} from './components/programming/side-projects/games/typing-speed-test/typing-speed-test.component';
 import {WhackAMoleComponent} from './components/programming/side-projects/games/whack-a-mole/whack-a-mole.component';
 
 export const routes: Routes = [

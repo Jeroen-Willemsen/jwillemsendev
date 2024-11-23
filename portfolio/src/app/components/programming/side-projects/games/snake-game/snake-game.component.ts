@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {NgIf} from '@angular/common';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-snake-game',
@@ -9,6 +10,14 @@ import {NgIf} from '@angular/common';
   ],
   templateUrl: './snake-game.component.html',
   styleUrl: './snake-game.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class SnakeGameComponent implements AfterViewInit {
   canvas: HTMLCanvasElement;

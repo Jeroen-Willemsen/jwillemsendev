@@ -14,10 +14,11 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   animations: [
     trigger('fadeIn', [
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate('300ms ease-in', style({ opacity: 1 }))
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
       ])
     ])
   ]
 })
-export class PageNotFoundComponent {}
+export class PageNotFoundComponent {
+}

@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
 @import 'highlight.js/styles/github.css';
+
 @include mat.core();
 
 :root {
@@ -197,6 +198,12 @@ nav a:hover {
   height: 100%;
   object-fit: contain;
   display: block;
+  transition: opacity 0.25s ease-in-out;
+  opacity: 1;
+}
+
+.image-container img.fade {
+  opacity: 0;
 }
 
 .indicators {

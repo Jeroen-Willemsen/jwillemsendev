@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {Publication} from '../models/publication.model';
 import {CaptionedImage} from '../models/captioned-image.model';
 
 @Injectable({
@@ -10,13 +9,16 @@ export class CaptionedImageService {
   private captionedImages: CaptionedImage[] = [
     {
       url: 'assets/images/man_making_birdcage.jpg',
-      caption: 'A man making a bird cage from strips of bamboo'},
+      caption: 'A man making a bird cage from strips of bamboo'
+    },
     {
       url: 'assets/images/man_with_rattan.jpg',
-      caption: 'A man sitting down inside Mount Maru\'s crater after collecting some rattan'},
+      caption: 'A man sitting down inside Mount Maru\'s crater after collecting some rattan'
+    },
     {
       url: 'assets/images/me_and_man_drinking_coconut.jpg',
-      caption: 'Me and a man drinking juice out of a cracked coconut'},
+      caption: 'Me and a man drinking juice out of a cracked coconut'
+    },
     {
       url: 'assets/images/me_and_man_laughing.jpg',
       caption: 'Me and a man after finding out the coconuts were in fact empty, and only given to us for the photo'

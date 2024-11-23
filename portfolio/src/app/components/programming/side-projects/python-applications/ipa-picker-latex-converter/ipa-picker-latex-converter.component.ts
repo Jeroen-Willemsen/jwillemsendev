@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {HighlightModule} from 'ngx-highlightjs';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-ipa-picker-latex-converter',
@@ -8,7 +9,15 @@ import {HighlightModule} from 'ngx-highlightjs';
     HighlightModule
   ],
   templateUrl: './ipa-picker-latex-converter.component.html',
-  styleUrl: './ipa-picker-latex-converter.component.scss'
+  styleUrl: './ipa-picker-latex-converter.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class IpaPickerLatexConverterComponent {
   code: string =

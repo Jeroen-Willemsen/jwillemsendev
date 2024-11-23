@@ -3,6 +3,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NgForOf, NgOptimizedImage} from '@angular/common';
 import {interval, Subscription} from 'rxjs';
 import {CaptionedImageService} from '../../../../services/captioned-image.service';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-photo-carousel',
@@ -12,15 +13,25 @@ import {CaptionedImageService} from '../../../../services/captioned-image.servic
     NgOptimizedImage
   ],
   templateUrl: './photo-carousel.component.html',
-  styleUrl: './photo-carousel.component.scss'
+  styleUrl: './photo-carousel.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class PhotoCarouselComponent implements OnInit, OnDestroy {
-  public currentIndex: number = 0;
-  private carouselSubscription: Subscription;
-  private rotationInterval: number = 5000;
+  protected currentIndex: number = 0;
   protected captionedImages: CaptionedImage[] = [];
+  protected isFading: boolean = false;
+  private carouselSubscription: Subscription;
+  private rotationInterval: number = 10000;
 
-  constructor(private captionedImageService: CaptionedImageService) {}
+  constructor(private captionedImageService: CaptionedImageService) {
+  }
 
   ngOnInit(): void {
     this.captionedImageService.getCaptionedImages()
@@ -35,11 +46,45 @@ export class PhotoCarouselComponent implements OnInit, OnDestroy {
     this.stopAutoRotate();
   }
 
+  protected previousImage = (): void => {
+    this.isFading = true;
+    setTimeout(() => {
+      this.currentIndex = (this.currentIndex === 0)
+        ? this.captionedImages.length - 1
+        : this.currentIndex - 1;
+      this.resetAutoRotate();
+      this.isFading = false;
+    }, 250);
+  };
+
+  protected nextImage = (): void => {
+    this.isFading = true;
+    setTimeout(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.captionedImages.length;
+      this.resetAutoRotate();
+      this.isFading = false;
+    }, 250);
+  };
+
+  protected goToImage = (index: number): void => {
+    this.isFading = true;
+    setTimeout(() => {
+      this.currentIndex = index;
+      this.resetAutoRotate();
+      this.isFading = false;
+    }, 250);
+  };
+
+  protected onImageError = (event: Event): void => {
+    const target = event.target as HTMLImageElement;
+    target.src = 'assets/images/fallback.jpg';
+  };
+
   private startAutoRotate = (): void => {
     this.carouselSubscription = interval(this.rotationInterval)
       .subscribe(() => {
         this.nextImage();
-    });
+      });
   };
 
   private stopAutoRotate = (): void => {
@@ -48,31 +93,9 @@ export class PhotoCarouselComponent implements OnInit, OnDestroy {
     }
   };
 
-  public previousImage = (): void => {
-    this.currentIndex = (this.currentIndex === 0)
-      ? this.captionedImages.length - 1
-      : this.currentIndex - 1;
-    this.resetAutoRotate();
-  };
-
-  public nextImage = (): void => {
-    this.currentIndex = (this.currentIndex + 1) % this.captionedImages.length;
-    this.resetAutoRotate();
-  };
-
-  public goToImage = (index: number): void => {
-    this.currentIndex = index;
-    this.resetAutoRotate();
-  };
-
   private resetAutoRotate = (): void => {
     this.stopAutoRotate();
     this.startAutoRotate();
-  };
-
-  public onImageError = (event: Event): void => {
-    const target = event.target as HTMLImageElement;
-    target.src = 'assets/images/fallback.jpg';
   };
 
   private preloadImages = (): void => {

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-typing-speed-test',
@@ -10,7 +11,15 @@ import {NgIf} from '@angular/common';
     NgIf
   ],
   templateUrl: './typing-speed-test.component.html',
-  styleUrl: './typing-speed-test.component.scss'
+  styleUrl: './typing-speed-test.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class TypingSpeedTestComponent implements OnInit {
   text: string =

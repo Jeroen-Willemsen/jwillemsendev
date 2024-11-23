@@ -1,18 +1,18 @@
-<div class="tabs">
-  <button
-    (click)="selectTab('app-games')"
-    [class.active]="selectedTab === 'app-games'">
-    Angular games
-  </button>
-  <button
-    (click)="selectTab('app-python-applications')"
-    [class.active]="selectedTab === 'app-python-applications'">
-    Python applications
-  </button>
+<div [@fadeIn]>
+  <div class="tabs">
+    <button
+      (click)="selectTab('app-games')"
+      [class.active]="selectedTab === 'app-games'">
+      Angular games
+    </button>
+    <button
+      (click)="selectTab('app-python-applications')"
+      [class.active]="selectedTab === 'app-python-applications'">
+      Python applications
+    </button>
+  </div>
+  <div class="tab-content">
+    <app-games *ngIf="selectedTab === 'app-games'"></app-games>
+    <app-python-applications *ngIf="selectedTab === 'app-python-applications'"></app-python-applications>
+  </div>
 </div>
-
-<div class="tab-content">
-  <app-games *ngIf="selectedTab === 'app-games'"></app-games>
-  <app-python-applications *ngIf="selectedTab === 'app-python-applications'"></app-python-applications>
-</div>
-

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {HighlightModule} from 'ngx-highlightjs';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-simple-calculator',
@@ -8,7 +9,15 @@ import {HighlightModule} from 'ngx-highlightjs';
     HighlightModule
   ],
   templateUrl: './simple-calculator.component.html',
-  styleUrl: './simple-calculator.component.scss'
+  styleUrl: './simple-calculator.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class SimpleCalculatorComponent {
   code: string =

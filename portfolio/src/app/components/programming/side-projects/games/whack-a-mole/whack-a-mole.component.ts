@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NgForOf, NgIf} from '@angular/common';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-whack-a-mole',
@@ -9,7 +10,15 @@ import {NgForOf, NgIf} from '@angular/common';
     NgForOf
   ],
   templateUrl: './whack-a-mole.component.html',
-  styleUrl: './whack-a-mole.component.scss'
+  styleUrl: './whack-a-mole.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ]
 })
 export class WhackAMoleComponent implements OnInit, OnDestroy {
   holes: boolean[] = Array(9).fill(false);

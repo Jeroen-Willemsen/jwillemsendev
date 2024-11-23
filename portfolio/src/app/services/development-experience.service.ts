@@ -146,7 +146,7 @@ export class DevelopmentExperienceService {
         },
         {
           name: 'Databases',
-          info: [`I took and passed EXIN's DBSQL (Databases and SQL Foundation) course in 2022.` +
+          info: [`I took and passed EXIN's DBSQL (Databases and SQL Foundation) course in 2022. ` +
           `You can download the certificate <a href=\"assets/certifications/DBSQL_EXIN.pdf\" download>here</a>.`]
         },
         {
@@ -154,14 +154,14 @@ export class DevelopmentExperienceService {
           info: [`I took and passed the Azure AZ-900 (Azure Fundamentals) course from Pearson VUE in 2022. ` +
           `You can download the certificate <a href=\"assets/certifications/Azure_AZ-900_Microsoft.pdf\" download>here</a>.`,
           `I am also a certified scrum master, having taken and passed the PSM-I (Professional Scrum Master I) course ` +
-          `by scrum.org in 2022.` +
+          `by scrum.org in 2022. ` +
           `You can download the certificate <a href=\"assets/certifications/PSM_scrumdotorg.pdf\" download>here</a>.`]
         },
         {
           name: 'Other',
           info: [`I took and passed an elaborate course on machine learning with Python. ` +
           `This was a PhD course called 'Social Sciences: An Applied Introduction to Machine Learning' ` +
-          `and was provided by the University of Aalborg, Denmark in 2019.` +
+          `and was provided by the University of Aalborg, Denmark in 2019. ` +
           `You can download the certificate <a href=\"assets/files/SDSPHD20_AAU.pdf\" download>here</a>.`]
         },
       ]

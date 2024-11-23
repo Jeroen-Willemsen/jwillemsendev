@@ -1,9 +1,12 @@
 import {Component} from '@angular/core';
+import {PhotoCarouselComponent} from './photo-carousel/photo-carousel.component';
 
 @Component({
   selector: 'app-the-reta-language',
   standalone: true,
-  imports: [],
+  imports: [
+    PhotoCarouselComponent
+  ],
   templateUrl: './the-reta-language.component.html',
   styleUrl: './the-reta-language.component.scss'
 })

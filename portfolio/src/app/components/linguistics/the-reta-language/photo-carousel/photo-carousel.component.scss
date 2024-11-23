@@ -1,0 +1,107 @@
+/* Carousel Wrapper */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px; /* Sets the maximum width of the carousel */
+  width: 100%; /* Allows the carousel to be responsive */
+  margin: 20px auto; /* Centers the carousel with some vertical spacing */
+  position: relative;
+}
+
+/* Carousel Container */
+.carousel-container {
+  flex: 1 0 auto;
+  overflow: hidden;
+  /* Define fixed height to maintain uniformity */
+  height: 450px; /* Adjust as needed */
+}
+
+/* Image Container */
+.image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Images */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images cover the container without distortion */
+  display: block;
+}
+
+/* Navigation Buttons */
+.nav-button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+}
+
+/* Navigation Buttons Hover Effect */
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Indicators */
+.indicators {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.indicators span {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicators span.active {
+  background-color: #717171;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Adjust carousel height for smaller screens */
+  .carousel-container {
+    height: 300px; /* Adjust as needed */
+  }
+
+  /* Reduce button size on smaller screens */
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin: 0 6px;
+  }
+
+  /* Adjust image-container height further for very small screens */
+  @media (max-width: 480px) {
+    .carousel-container {
+      height: 200px; /* Adjust as needed */
+    }
+
+    .nav-button {
+      width: 35px;
+      height: 35px;
+      font-size: 18px;
+    }
+  }
+}

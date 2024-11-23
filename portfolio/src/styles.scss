@@ -44,24 +44,6 @@ p {
   font-size: small;
 }
 
-.tabs {
-  display: flex;
-  padding-top: 5px;
-}
-
-.tabs button {
-  padding: 10px 20px;
-  margin-right: 5px;
-  background-color: #f1f1f1;
-  border: none;
-  cursor: pointer;
-  font-family: 'Roboto Mono', monospace;
-}
-
-.tab-content {
-  padding: 5px;
-}
-
 .code-block {
   background-color: var(--light-background-color);
   width: 75vw;

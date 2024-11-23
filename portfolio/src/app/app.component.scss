@@ -1,11 +1,12 @@
 .tabs {
   display: flex;
+  padding: 5px 0 0 5px;
 }
 
 .tabs button {
   padding: 10px 20px;
   margin-right: 5px;
-  background-color: #f1f1f1;
+  background-color: var(--light-background-color);
   border: none;
   cursor: pointer;
   font-family: 'Roboto Mono', monospace;

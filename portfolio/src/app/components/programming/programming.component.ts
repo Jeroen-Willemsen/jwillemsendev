@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NgIf} from '@angular/common';
-import {DevelopmentSkillsComponent} from './development-skills/development-skills.component';
+import {DevelopmentExperienceComponent} from './development-experience/development-experience.component';
 import {SideProjectsComponent} from './side-projects/side-projects.component';
 import {PopularScienceComponent} from '../linguistics/popular-science/popular-science.component';
 import {PublicationsComponent} from '../linguistics/publications/publications.component';
@@ -10,7 +10,7 @@ import {TheRetaLanguageComponent} from '../linguistics/the-reta-language/the-ret
   selector: 'app-programming',
   standalone: true,
   imports: [
-    DevelopmentSkillsComponent,
+    DevelopmentExperienceComponent,
     NgIf,
     SideProjectsComponent,
     PopularScienceComponent,
@@ -21,7 +21,7 @@ import {TheRetaLanguageComponent} from '../linguistics/the-reta-language/the-ret
   styleUrl: '../../app.component.scss'
 })
 export class ProgrammingComponent {
-  selectedTab: string = 'app-development-skills';
+  selectedTab: string = 'app-development-experience';
 
   selectTab(tabName: string): void {
     this.selectedTab = tabName;

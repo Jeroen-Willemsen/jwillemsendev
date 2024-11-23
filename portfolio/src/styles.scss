@@ -77,7 +77,7 @@ p {
   text-justify: distribute-all-lines;
 }
 
-.skills-container {
+.development-experiences-container {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -85,8 +85,8 @@ p {
   margin: 20px;
 }
 
-.skill-card {
-  width: 20vw;
+.development-experience-card {
+  width: 30vw;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

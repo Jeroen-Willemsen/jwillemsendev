@@ -1,7 +1,7 @@
 <div class="tabs">
   <button
-    (click)="selectTab('app-development-skills')"
-    [class.active]="selectedTab === 'app-development-skills'">
+    (click)="selectTab('app-development-experience')"
+    [class.active]="selectedTab === 'app-development-experience'">
     Professional programming experience
   </button>
   <button
@@ -12,6 +12,6 @@
 </div>
 
 <div class="tab-content">
-  <app-development-skills *ngIf="selectedTab === 'app-development-skills'"></app-development-skills>
+  <app-development-experience *ngIf="selectedTab === 'app-development-experience'"></app-development-experience>
   <app-side-projects *ngIf="selectedTab === 'app-side-projects'"></app-side-projects>
 </div>

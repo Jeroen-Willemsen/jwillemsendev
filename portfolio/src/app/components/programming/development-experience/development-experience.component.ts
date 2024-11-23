@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule, NgForOf, NgIf} from '@angular/common';
-import {DevelopmentSkillsService} from '../../../services/development-skills.service';
+import {DevelopmentExperienceService} from '../../../services/development-experience.service';
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/material/card';
 import {
   MatExpansionPanel,
@@ -8,10 +8,10 @@ import {
   MatExpansionPanelHeader,
   MatExpansionPanelTitle
 } from '@angular/material/expansion';
-import {SkillCategory} from '../../../models/skill.model';
+import {DevelopmentExperienceCategory} from '../../../models/development-experience.model';
 
 @Component({
-  selector: 'app-development-skills',
+  selector: 'app-development-experience',
   standalone: true,
   imports: [
     CommonModule,
@@ -26,18 +26,18 @@ import {SkillCategory} from '../../../models/skill.model';
     NgForOf,
     NgIf,
   ],
-  templateUrl: './development-skills.component.html',
+  templateUrl: './development-experience.component.html',
   styleUrl: '../../../app.component.scss'
 })
-export class DevelopmentSkillsComponent implements OnInit {
-  categories: SkillCategory[] = [];
+export class DevelopmentExperienceComponent implements OnInit {
+  developmentExperienceCategories: DevelopmentExperienceCategory[] = [];
 
-  constructor(private developmentSkillsService: DevelopmentSkillsService) {}
+  constructor(private developmentExperienceService: DevelopmentExperienceService) {}
 
   ngOnInit(): void {
-    this.developmentSkillsService.getSkillCategories()
-      .subscribe((skills) => {
-        this.categories = skills;
+    this.developmentExperienceService.getExperienceCategories()
+      .subscribe((experiences) => {
+        this.developmentExperienceCategories = experiences;
       });
   }
 }

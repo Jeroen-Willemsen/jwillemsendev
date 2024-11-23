@@ -1,6 +1,6 @@
 import {AboutMeComponent} from './components/about-me/about-me.component';
 import {ContactMeComponent} from './components/contact-me/contact-me.component';
-import {DevelopmentSkillsComponent} from './components/programming/development-skills/development-skills.component';
+import {DevelopmentExperienceComponent} from './components/programming/development-experience/development-experience.component';
 import {HangmanGameComponent} from './components/programming/side-projects/games/hangman-game/hangman-game.component';
 import {LinguisticsComponent} from './components/linguistics/linguistics.component';
 import {MemoryGameComponent} from './components/programming/side-projects/games/memory-game/memory-game.component';
@@ -17,7 +17,7 @@ export const routes: Routes = [
   {path: '', redirectTo: '/about-me', pathMatch: 'full'},
   {path: 'about-me', component: AboutMeComponent},
   {path: 'contact-me', component: ContactMeComponent},
-  {path: 'development-skills', component: DevelopmentSkillsComponent},
+  {path: 'development-experience', component: DevelopmentExperienceComponent},
   {path: 'hangman-game', component: HangmanGameComponent},
   {path: 'linguistics', component: LinguisticsComponent},
   {path: 'memory-game', component: MemoryGameComponent},

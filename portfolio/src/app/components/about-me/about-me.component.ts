@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
-import {DevelopmentSkillsComponent} from '../programming/development-skills/development-skills.component';
+import {DevelopmentExperienceComponent} from '../programming/development-experience/development-experience.component';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
   imports: [
-    DevelopmentSkillsComponent
+    DevelopmentExperienceComponent
   ],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'

@@ -80,10 +80,10 @@ export class PublicationService {
       filenameAlt: undefined,
       origloc: 'https://www.degruyter.com/document/doi/10.1515/flin-2021-2004/html?lang=en',
       origlocAlt: undefined,
-      title: 'Phonaesthemic alternations in Flemish dialects:' +
+      title: 'Phonaesthemic alternations in Flemish dialects: ' +
         'a matter of language contact in the emergence of phonaesthesia?',
       reference: 'Robbe, J. and Willemsen, J. (2022)' +
-        'Phonaesthemic alternations in Flemish dialects:' +
+        'Phonaesthemic alternations in Flemish dialects: ' +
         'a matter of language contact in the emergence of phonaesthesia?' +
         'Folia Linguistica, vol. 56(1), 57-86.',
       description: 'description',

@@ -1,27 +1,27 @@
 <div class="carousel-wrapper">
-  <button class="nav-button left" (click)="previousImage()" aria-label="Previous Image">
+  <button class="nav-button left" (click)="previousImage()">
     &#10094;
   </button>
-
   <div class="carousel-container">
     <div class="image-container">
       <img
-        [src]="images[currentIndex]"
-        alt="Carousel Image"
+        (error)="onImageError($event)"
+        [ngSrc]="captionedImages[currentIndex].url"
+        title="{{captionedImages[currentIndex].caption}}"
+        alt="{{captionedImages[currentIndex].caption}}"
         loading="lazy"
-        (error)="onImageError($event)">
+        fill>
     </div>
   </div>
-
-  <button class="nav-button right" (click)="nextImage()" aria-label="Next Image">
+  <button class="nav-button right" (click)="nextImage()">
     &#10095;
   </button>
 </div>
 
-<!-- Optional: Indicators -->
 <div class="indicators">
+  <p>{{captionedImages[currentIndex].caption}}</p>
   <span
-    *ngFor="let image of images; let i = index"
+    *ngFor="let image of captionedImages; let i = index"
     [class.active]="i === currentIndex"
     (click)="goToImage(i)">
   </span>

@@ -1,6 +1,8 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
-import {interval, Subscription} from 'rxjs';
+import {CaptionedImage} from '../../../../models/captioned-image.model';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NgForOf, NgOptimizedImage} from '@angular/common';
+import {interval, Subscription} from 'rxjs';
+import {CaptionedImageService} from '../../../../services/captioned-image.service';
 
 @Component({
   selector: 'app-photo-carousel',
@@ -13,27 +15,18 @@ import {NgForOf, NgOptimizedImage} from '@angular/common';
   styleUrl: './photo-carousel.component.scss'
 })
 export class PhotoCarouselComponent implements OnInit, OnDestroy {
-  images: string[] = [
-    'assets/images/man_making_birdcage.jpg',
-    'assets/images/man_with_rattan.jpg',
-    'assets/images/me_and_man_drinking_coconut.jpg',
-    'assets/images/me_and_man_laughing.jpg',
-    'assets/images/me_and_two_men.jpg',
-    'assets/images/recording_in_hut.jpg',
-    'assets/images/recording_on_grave.jpg',
-    'assets/images/three_kids.jpg',
-    'assets/images/three_women_carrying.jpg',
-    'assets/images/three_women_smiling.jpg',
-    'assets/images/traditional_hut_in_crater.jpg',
-    'assets/images/woman_carrying_water.jpg',
-    'assets/images/woman_with_basket.jpg',
-  ];
+  public currentIndex: number = 0;
+  private carouselSubscription: Subscription;
+  private rotationInterval: number = 5000;
+  protected captionedImages: CaptionedImage[] = [];
 
-  currentIndex: number = 0;
-  carouselSubscription!: Subscription;
-  rotationInterval: number = 5000;
+  constructor(private captionedImageService: CaptionedImageService) {}
 
   ngOnInit(): void {
+    this.captionedImageService.getCaptionedImages()
+      .subscribe((images) => {
+        this.captionedImages = images;
+      });
     this.startAutoRotate();
     this.preloadImages();
   }
@@ -42,47 +35,50 @@ export class PhotoCarouselComponent implements OnInit, OnDestroy {
     this.stopAutoRotate();
   }
 
-  startAutoRotate(): void {
-    this.carouselSubscription = interval(this.rotationInterval).subscribe(() => {
-      this.nextImage();
+  private startAutoRotate = (): void => {
+    this.carouselSubscription = interval(this.rotationInterval)
+      .subscribe(() => {
+        this.nextImage();
     });
-  }
+  };
 
-  stopAutoRotate(): void {
+  private stopAutoRotate = (): void => {
     if (this.carouselSubscription) {
       this.carouselSubscription.unsubscribe();
     }
-  }
+  };
 
-  previousImage(): void {
-    this.currentIndex = (this.currentIndex === 0) ? this.images.length - 1 : this.currentIndex - 1;
+  public previousImage = (): void => {
+    this.currentIndex = (this.currentIndex === 0)
+      ? this.captionedImages.length - 1
+      : this.currentIndex - 1;
     this.resetAutoRotate();
-  }
+  };
 
-  nextImage(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+  public nextImage = (): void => {
+    this.currentIndex = (this.currentIndex + 1) % this.captionedImages.length;
     this.resetAutoRotate();
-  }
+  };
 
-  goToImage(index: number): void {
+  public goToImage = (index: number): void => {
     this.currentIndex = index;
     this.resetAutoRotate();
-  }
+  };
 
-  resetAutoRotate(): void {
+  private resetAutoRotate = (): void => {
     this.stopAutoRotate();
     this.startAutoRotate();
-  }
+  };
 
-  onImageError(event: Event): void {
+  public onImageError = (event: Event): void => {
     const target = event.target as HTMLImageElement;
     target.src = 'assets/images/fallback.jpg';
-  }
+  };
 
-  preloadImages(): void {
-    this.images.forEach((image) => {
+  private preloadImages = (): void => {
+    this.captionedImages.forEach((image) => {
       const img = new Image();
-      img.src = image;
+      img.src = image.url;
     });
-  }
+  };
 }

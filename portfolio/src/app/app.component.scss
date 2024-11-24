@@ -1,6 +1,30 @@
+@media (max-width: 768px) {
+  .tabs button {
+    padding: 0 !important;
+    margin-right: 5px;
+    background-color: var(--light-background-color);
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    font-size: smaller !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs button {
+    padding: 0 !important;
+    margin-right: 5px;
+    background-color: var(--light-background-color);
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    font-size: x-small !important;
+  }
+}
+
 .tabs {
   display: flex;
-  padding: 5px 0 0 5px;
+  padding: 5px;
 }
 
 .tabs button {

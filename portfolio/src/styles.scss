@@ -1,7 +1,6 @@
 @use '@angular/material' as mat;
-@import 'highlight.js/styles/github.css';
-
 @include mat.core();
+@import 'highlight.js/styles/github.css';
 
 :root {
   --accent-color: #526868;
@@ -17,23 +16,6 @@ body {
   color: var(--text-color);
   margin: 0;
   font-family: 'Roboto Mono', monospace;
-}
-
-.carousel-container {
-  flex: 1 0 auto;
-  overflow: hidden;
-  height: 60vh;
-  max-width: 100%;
-}
-
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 55vw;
-  width: 100%;
-  margin: 20px auto;
-  position: relative;
 }
 
 code, pre {
@@ -57,37 +39,8 @@ html, body {
   height: 100%;
 }
 
-p {
-  font-family: 'Roboto Mono', monospace;
-  font-size: small;
-}
-
-.code-block {
-  background-color: var(--light-background-color);
-  width: 75vw;
-  font-size: small;
-  margin: 0 auto;
-}
-
-.paragraph-block {
-  background-color: var(--background-color);
-  width: 75vw;
-  margin: 0.5em auto 0 auto;
-  font-size: small;
-  text-justify: distribute-all-lines;
-}
-
-.development-experiences-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  margin: 20px;
-}
-
-.development-experience-card {
-  width: 30vw;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+mat-card-content {
+  padding: 0 !important;
 }
 
 mat-card-content li {
@@ -126,32 +79,6 @@ nav {
   padding: 0;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav li {
-  margin: 0;
-}
-
-nav {
-  background-color: var(--primary-color);
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav li {
-  margin: 0;
-}
-
 nav a {
   display: block;
   color: var(--secondary-color);
@@ -165,25 +92,57 @@ nav a:hover {
   background-color: var(--accent-color);
 }
 
-.nav-button {
-  width: 50px;
-  height: 50px;
+nav li {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: small;
+}
+
+.carousel-container {
+  flex: 1 0 auto;
+  overflow: hidden;
+  height: 60vh;
+  max-width: 100%;
+}
+
+.carousel-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--accent-color);
-  border: none;
-  color: var(--light-background-color);
-  font-size: 24px;
-  cursor: pointer;
-  border-radius: 5%;
-  user-select: none;
-  transition: background-color 0.3s ease;
-  margin: 0 10px;
+  max-width: 55vw;
+  width: 100%;
+  margin: 20px auto;
+  position: relative;
 }
 
-.nav-button:hover {
-  background-color: var(--primary-color);
+.code-block {
+  background-color: var(--light-background-color);
+  width: 75vw;
+  font-size: small;
+  margin: 0 auto;
+}
+
+.development-experience-card {
+  width: 30vw;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.development-experiences-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 20px;
 }
 
 .image-container {
@@ -226,38 +185,119 @@ nav a:hover {
   background-color: var(--accent-color);
 }
 
+.nav-button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--light-background-color);
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5%;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+}
+
+.nav-button:hover {
+  background-color: var(--primary-color);
+}
+
+.paragraph-block {
+  background-color: var(--background-color);
+  width: 75vw;
+  margin: 0.5em auto 0 auto;
+  font-size: small;
+  text-justify: distribute-all-lines;
+}
+
 @media (max-width: 768px) {
   .carousel-container {
-    height: 300px;
+    height: 400px;
+  }
+
+  h1 {
+    font-size: medium;
+  }
+
+  code, h5, h6, pre {
+    font-size: smaller;
+  }
+
+  mat-card-content li, mat-card-content ul, mat-card-header, mat-card-title {
+    font-size: smaller;
+    padding: 0 !important;
+  }
+
+  mat-expansion-panel, mat-expansion-panel-header {
+    font-size: smaller;
+    padding: 0 !important;
   }
 
   .nav-button {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    margin: 0 6px;
-  }
-
-  @media (max-width: 480px) {
-    .carousel-container {
-      height: 200px; /* Adjust as needed */
-    }
-
-    .nav-button {
-      width: 35px;
-      height: 35px;
-      font-size: 18px;
-    }
-  }
-}
-
-
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    font-size: smaller;
   }
 
   nav a {
     text-align: center;
+    font-size: smaller;
+  }
+
+  nav ul {
+    flex-direction: column;
+    font-size: smaller;
+  }
+
+  p {
+    font-size: smaller;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: small;
+  }
+
+  code, h5, h6, pre {
+    font-size: x-small;
+  }
+
+  mat-card-content li, mat-card-content ul, mat-card-header, mat-card-title {
+    font-size: x-small;
+    padding: 0 !important;
+  }
+
+  mat-expansion-panel, mat-expansion-panel-header {
+    font-size: x-small;
+    padding: 0 !important;
+  }
+
+  .nav-button {
+    width: 25px;
+    height: 25px;
+    font-size: x-small;
+  }
+
+  nav a {
+    text-align: center;
+    font-size: x-small;
+  }
+
+  nav ul {
+    flex-direction: column;
+    font-size: x-small;
+  }
+
+  p {
+    font-size: x-small;
   }
 }

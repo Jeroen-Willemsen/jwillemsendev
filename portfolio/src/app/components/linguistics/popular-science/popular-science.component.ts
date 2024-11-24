@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {PopularScienceArticle} from '../../../models/popular-science.article';
-import {PopularScienceArticleService} from '../../../services/popular-science-article.service';
 import {NgForOf, NgIf} from '@angular/common';
+import {PopularScienceArticleService} from '../../../services/popular-science-article.service';
+import {PopularScienceArticle} from '../../../models/popular-science.article';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -33,15 +33,13 @@ export class PopularScienceComponent implements OnInit {
   blogEN: PopularScienceArticle[];
   blogDK: PopularScienceArticle[];
 
-  constructor(private popularScienceArticleService: PopularScienceArticleService) {
-  }
+  constructor(private popularScienceArticleService: PopularScienceArticleService) {}
 
   ngOnInit(): void {
     this.popularScienceArticleService.getOverview()
       .subscribe((docs) => {
         this.articles = docs
-          .sort((a, b) => a.year - b.year)
-          .reverse();
+          .sort((a, b) => b.year - a.year);
         this.popsciAll = this.articles.filter(article => article.type === "pop-sci");
         this.blogAll = this.articles.filter(article => article.type === "blog");
         this.popsciNL = this.popsciAll.filter(article => article.language === "Dutch");

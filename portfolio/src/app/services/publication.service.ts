@@ -28,7 +28,7 @@ export class PublicationService {
       filenameAlt: undefined,
       origloc: 'https://benjamins.com/catalog/sl.19073.wil',
       origlocAlt: undefined,
-      title: 'The expression of vulgarity, force, severity and size. ' +
+      title: 'The expression of vulgarity, force, severity and size: ' +
         'Phonaesthemic alternations in Reta and in other languages',
       reference: 'Willemsen, J. & Miltersen, E. H. (2020).' +
         'The expression of vulgarity, force, severity and size: ' +
@@ -121,8 +121,9 @@ export class PublicationService {
       description: 'description',
       url: 'assets/articles/on_languages_on_islands_preprint.pdf',
       urlAlt: undefined,
-      authors: 'Joshua Nash, Peter Bakker, Kristoffer Friis Bøegh, Aymeric Daval-Markussen, Hartmut Haberland, ' +
-        'Dale Kedwards, John Ladhams, Carsten Levisen, Jón Símon Markússon, Joost Robbe & Jeroen Willemsen',
+      authors: 'Joshua Nash et al.',
+      // authors: 'Joshua Nash, Peter Bakker, Kristoffer Friis Bøegh, Aymeric Daval-Markussen, Hartmut Haberland, ' +
+      //   'Dale Kedwards, John Ladhams, Carsten Levisen, Jón Símon Markússon, Joost Robbe & Jeroen Willemsen',
       year: 2020
     },
 

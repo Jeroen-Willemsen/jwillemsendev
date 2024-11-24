@@ -57,18 +57,11 @@ export class PopSciAndBlogsComponent implements OnInit {
   }
 
   protected selectTab = (tabName: string): void => {
-    this.showCheckboxes = false;
     this.selectedTab = tabName;
-    setTimeout(() => {
-      this.showCheckboxes = true;
-      this.blogsComponentInput = [...this.articles]
-        .filter(article => article.type === "blog");
-      this.popsciComponentInput = [...this.articles]
-        .filter(article => article.type === "pop-sci");
-    }, 50)
+    this.resetCheckboxesAndComponentInput();
   };
 
-  protected updateLanguagePreferences = (event: Event, lang: 'en' | 'nl' | 'dk'): void => {
+  protected updateLanguagePreferences = (event: Event, lang: 'en' | 'nl' | 'dk') => {
     const checkbox = event.target as HTMLInputElement;
     switch (lang) {
       case 'en':
@@ -88,9 +81,8 @@ export class PopSciAndBlogsComponent implements OnInit {
     const allLanguagesSelected = en && nl && dk;
     switch (tab) {
       case 'app-popular-science':
-        if (allLanguagesSelected) {
-          this.popsciComponentInput = [...this.articles]
-            .filter(article => article.type === "pop-sci");
+        if (allLanguagesSelected || (!en && !dk)) {
+          this.resetCheckboxesAndComponentInput();
         } else {
           if (en === false) {
             this.popsciComponentInput = [...this.popsciComponentInput]
@@ -103,9 +95,8 @@ export class PopSciAndBlogsComponent implements OnInit {
         }
         break;
       case 'app-blogs':
-        if (allLanguagesSelected) {
-          this.blogsComponentInput = [...this.articles]
-            .filter(article => article.type === "blog");
+        if (allLanguagesSelected || (!en && !nl)) {
+          this.resetCheckboxesAndComponentInput();
         } else {
           if (en === false) {
             this.blogsComponentInput = [...this.blogsComponentInput]
@@ -118,5 +109,19 @@ export class PopSciAndBlogsComponent implements OnInit {
         }
         break;
     }
+  };
+
+  private resetCheckboxesAndComponentInput = (): void => {
+    this.showCheckboxes = false;
+    setTimeout(() => {
+      this.showCheckboxes = true;
+      this.blogsComponentInput = [...this.articles]
+        .filter(article => article.type === "blog");
+      this.popsciComponentInput = [...this.articles]
+        .filter(article => article.type === "pop-sci");
+      this.showEnglish = true;
+      this.showDutch = true;
+      this.showDanish = true;
+    }, 50)
   };
 }

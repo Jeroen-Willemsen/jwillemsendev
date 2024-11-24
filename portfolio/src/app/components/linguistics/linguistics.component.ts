@@ -1,18 +1,18 @@
 import {Component} from '@angular/core';
 import {NgIf} from '@angular/common';
-import {PopularScienceComponent} from './popular-science/popular-science.component';
-import {PublicationsComponent} from './publications/publications.component';
+import {PopSciAndBlogsComponent} from './pop-sci-and-blogs/pop-sci-and-blogs.component';
 import {TheRetaLanguageComponent} from './the-reta-language/the-reta-language.component';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {PublicationsComponent} from './publications/publications.component';
 
 @Component({
   selector: 'app-linguistics',
   standalone: true,
   imports: [
     NgIf,
-    PopularScienceComponent,
-    PublicationsComponent,
-    TheRetaLanguageComponent
+    TheRetaLanguageComponent,
+    PopSciAndBlogsComponent,
+    PublicationsComponent
   ],
   templateUrl: './linguistics.component.html',
   styleUrl: '../../app.component.scss',

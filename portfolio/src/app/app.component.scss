@@ -22,6 +22,16 @@
   }
 }
 
+label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: small;
+  margin-right: 1em;
+}
+
+input:checked {
+  accent-color: var(--accent-color);
+}
+
 .tabs {
   display: flex;
   padding: 5px;

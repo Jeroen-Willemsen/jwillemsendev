@@ -1,11 +1,11 @@
-<div class="development-experiences-container" [@fadeIn]>
+<div [@fadeIn] class="development-experiences-container">
   <mat-card *ngFor="let category of developmentExperienceCategories" class="development-experience-card">
     <mat-card-header>
       <mat-card-title>{{ category.name }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div *ngFor="let experience of category.experiences">
-        <mat-expansion-panel [expanded]="false" *ngIf="panelsVisible">
+        <mat-expansion-panel *ngIf="panelsVisible" [expanded]="false">
           <mat-expansion-panel-header [collapsedHeight]="'20px'">
             <mat-panel-title><b> {{ experience.name }} </b></mat-panel-title>
           </mat-expansion-panel-header>

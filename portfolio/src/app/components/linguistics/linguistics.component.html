@@ -6,8 +6,8 @@
       Academic publications
     </button>
     <button
-      (click)="selectTab('app-popular-science')"
-      [class.active]="selectedTab === 'app-popular-science'">
+      (click)="selectTab('app-pop-sci-and-blogs')"
+      [class.active]="selectedTab === 'app-pop-sci-and-blogs'">
       Popular science and blogs
     </button>
     <button
@@ -17,8 +17,8 @@
     </button>
   </div>
   <div class="tab-content">
-    <app-popular-science *ngIf="selectedTab === 'app-popular-science'"></app-popular-science>
     <app-publications *ngIf="selectedTab === 'app-publications'"></app-publications>
+    <app-pop-sci-and-blogs *ngIf="selectedTab === 'app-pop-sci-and-blogs'"></app-pop-sci-and-blogs>
     <app-the-reta-language *ngIf="selectedTab === 'app-the-reta-language'"></app-the-reta-language>
   </div>
 </div>

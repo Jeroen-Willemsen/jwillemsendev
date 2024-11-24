@@ -5,7 +5,7 @@ import {PopularScienceArticle} from '../models/popular-science.article';
 @Injectable({
   providedIn: 'root',
 })
-export class PopularScienceArticleService {
+export class PopSciAndBlogService {
   private articles: PopularScienceArticle[] = [
     {
       id: 0,
@@ -158,9 +158,6 @@ export class PopularScienceArticleService {
       type: "blog"
     }
   ];
-
-  constructor() {
-  }
 
   getOverview(): Observable<PopularScienceArticle[]> {
     return of(this.articles);

@@ -24,7 +24,8 @@ import {animate, style, transition, trigger} from '@angular/animations';
 export class PublicationsComponent implements OnInit {
   publications: Publication[] = [];
 
-  constructor(private publicationService: PublicationService) {}
+  constructor(private publicationService: PublicationService) {
+  }
 
   ngOnInit(): void {
     this.publicationService.getPublications()

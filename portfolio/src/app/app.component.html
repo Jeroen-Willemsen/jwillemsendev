@@ -1,4 +1,4 @@
-<div [@fadeIn]>
+<div [@fadeIn] class="app-container">
   <nav>
     <ul>
       <li><a routerLink="/about-me" routerLinkActive="active">About Me</a></li>
@@ -8,7 +8,8 @@
     </ul>
   </nav>
 </div>
-
-<router-outlet></router-outlet>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
 <br>
 <app-footer></app-footer>

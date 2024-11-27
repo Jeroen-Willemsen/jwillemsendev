@@ -23,6 +23,12 @@ code, pre {
   font-family: 'Roboto Mono', monospace;
 }
 
+.content {
+  flex: 1;
+  padding-bottom: 3em;
+  overflow-y: auto;
+}
+
 h1 {
   color: #000000;
   font-family: 'Roboto Mono', monospace;
@@ -109,6 +115,11 @@ p {
   font-size: small;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .carousel-container {
   flex: 1 0 auto;
   overflow: hidden;
@@ -143,7 +154,9 @@ p {
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
-  margin: 20px;
+  margin: 1em 1em 3em 1em;
+  position: absolute;
+  padding-bottom: 5em;
 }
 
 .image-container {

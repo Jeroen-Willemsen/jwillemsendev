@@ -2,6 +2,18 @@ import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {NgIf} from '@angular/common';
 import {animate, style, transition, trigger} from '@angular/animations';
 
+export enum DirectionEnum {
+  U = "Up",
+  D = "Down",
+  L = "Left",
+  R = "Right"
+}
+
+export interface MovingParts {
+  x: number;
+  y: number;
+}
+
 @Component({
   selector: 'app-snake-game',
   standalone: true,
@@ -23,36 +35,38 @@ export class SnakeGameComponent implements AfterViewInit {
   canvas: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
   box: number = 20;
-  snake: { x: number; y: number }[] = [];
-  direction: string = 'RIGHT';
-  food: { x: number; y: number };
-  gameInterval: any;
+  snake: MovingParts[] = [];
+  direction: DirectionEnum;
+  food: MovingParts;
+  gameInterval: NodeJS.Timeout | number;
   score: number = 0;
   canvasWidth: number = 400;
   canvasHeight: number = 400;
-  gameOver: boolean = false; // Added gameOver flag
-
-  constructor() {
-  }
+  gameOver: boolean = false;
 
   ngAfterViewInit(): void {
     this.canvas = <HTMLCanvasElement>document.getElementById('gameCanvas');
     this.ctx = this.canvas.getContext('2d');
-    this.initGame(); // Initialize the game on component load
+    this.initGame();
   }
 
   initGame(): void {
-    // Clear any existing game intervals
     if (this.gameInterval) {
       clearInterval(this.gameInterval);
-    }
+    } // Cleared any existing game intervals
     this.snake = [{x: 9 * this.box, y: 10 * this.box}];
-    this.direction = 'RIGHT';
     this.generateFood();
     this.score = 0;
+    this.direction = this.getRandomDirection();
     this.gameOver = false; // Reset game over flag
     // Start the game loop
     this.gameInterval = setInterval(() => this.gameLoop(), 100);
+  }
+
+  private getRandomDirection: () => DirectionEnum = () => {
+    const directionArray = Object.values(DirectionEnum);
+    const randomNumber = Math.floor(Math.random() * directionArray.length);
+    return directionArray[randomNumber];
   }
 
   generateFood(): void {
@@ -67,14 +81,14 @@ export class SnakeGameComponent implements AfterViewInit {
   @HostListener('document:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent): void {
     const key = event.keyCode;
-    if (key === 37 && this.direction !== 'RIGHT') {
-      this.direction = 'LEFT';
-    } else if (key === 38 && this.direction !== 'DOWN') {
-      this.direction = 'UP';
-    } else if (key === 39 && this.direction !== 'LEFT') {
-      this.direction = 'RIGHT';
-    } else if (key === 40 && this.direction !== 'UP') {
-      this.direction = 'DOWN';
+    if (key === 37 && this.direction !== DirectionEnum.R) {
+      this.direction = DirectionEnum.L;
+    } else if (key === 38 && this.direction !== DirectionEnum.D) {
+      this.direction = DirectionEnum.U;
+    } else if (key === 39 && this.direction !== DirectionEnum.L) {
+      this.direction = DirectionEnum.R;
+    } else if (key === 40 && this.direction !== DirectionEnum.U) {
+      this.direction = DirectionEnum.D;
     }
   }
 
@@ -97,10 +111,10 @@ export class SnakeGameComponent implements AfterViewInit {
     let snakeX = this.snake[0].x;
     let snakeY = this.snake[0].y;
 
-    if (this.direction === 'LEFT') snakeX -= this.box;
-    if (this.direction === 'UP') snakeY -= this.box;
-    if (this.direction === 'RIGHT') snakeX += this.box;
-    if (this.direction === 'DOWN') snakeY += this.box;
+    if (this.direction === DirectionEnum.L) snakeX -= this.box;
+    if (this.direction === DirectionEnum.U) snakeY -= this.box;
+    if (this.direction === DirectionEnum.R) snakeX += this.box;
+    if (this.direction === DirectionEnum.D) snakeY += this.box;
 
     // Check collision with walls or self
     if (

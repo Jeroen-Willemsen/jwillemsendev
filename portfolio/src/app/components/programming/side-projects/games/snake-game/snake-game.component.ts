@@ -40,8 +40,8 @@ export class SnakeGameComponent implements AfterViewInit {
   food: MovingParts;
   gameInterval: NodeJS.Timeout | number;
   score: number = 0;
-  canvasWidth: number = 400;
-  canvasHeight: number = 400;
+  canvasWidth: number = 1000;
+  canvasHeight: number = 500;
   gameOver: boolean = false;
 
   ngAfterViewInit(): void {
@@ -90,11 +90,13 @@ export class SnakeGameComponent implements AfterViewInit {
     } else if (key === 40 && this.direction !== DirectionEnum.U) {
       this.direction = DirectionEnum.D;
     }
+    if (event.key === 'Enter' && this.gameOver) {
+      this.initGame();
+    }
   }
 
-  gameLoop(): void {
+  gameLoop = (): void => {
     this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-
     for (let i = 0; i < this.snake.length; i++) {
       this.ctx.fillStyle = i === 0 ? 'green' : 'lightgreen';
       this.ctx.fillRect(
@@ -138,16 +140,15 @@ export class SnakeGameComponent implements AfterViewInit {
     } else {
       this.snake.pop();
     }
-
     this.snake.unshift(newHead);
-  }
+  };
 
-  collision(head: { x: number; y: number }, array: any[]): boolean {
+  collision = (head: MovingParts, array: MovingParts[]): boolean => {
     for (let i = 0; i < array.length; i++) {
       if (head.x === array[i].x && head.y === array[i].y) {
         return true;
       }
     }
     return false;
-  }
+  };
 }

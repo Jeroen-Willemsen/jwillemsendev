@@ -4,12 +4,14 @@
   <textarea
     (input)="onTextInput()"
     [(ngModel)]="enteredText"
-    [disabled]="timeLeft === 0"
-  ></textarea>
+    [disabled]="timeLeft === 0">
+  </textarea>
   <p>Time Left: {{ timeLeft }} seconds</p>
-  <div *ngIf="timeLeft === 0">
-    <p>Your typing speed is {{ wpm }} words per minute.</p>
-    <button (click)="resetTest()">Try Again</button>
-  </div>
+  @if (timeLeft === 0) {
+    <div>
+      <p>Your typing speed is {{ wpm }} words per minute.</p>
+      <button (click)="resetTest()">Try Again</button>
+    </div>
+  }
 </div>
 

@@ -1,15 +1,11 @@
 import {Component, Input} from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
 import {PopularScienceArticle} from '../../../../models/popular-science.article';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-popular-science',
   standalone: true,
-  imports: [
-    NgForOf,
-    NgIf
-  ],
+  imports: [],
   templateUrl: './popular-science.component.html',
   styleUrl: './popular-science.component.scss',
   animations: [

@@ -1,14 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-whack-a-mole',
   standalone: true,
-  imports: [
-    NgIf,
-    NgForOf
-  ],
+  imports: [],
   templateUrl: './whack-a-mole.component.html',
   styleUrl: './whack-a-mole.component.scss',
   animations: [

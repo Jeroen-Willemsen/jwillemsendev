@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {HangmanGameComponent} from './hangman-game/hangman-game.component';
 import {MemoryGameComponent} from './memory-game/memory-game.component';
-import {NgIf} from '@angular/common';
 import {SnakeGameComponent} from './snake-game/snake-game.component';
 import {TicTacToeComponent} from './tic-tac-toe/tic-tac-toe.component';
 import {TypingSpeedTestComponent} from './typing-speed-test/typing-speed-test.component';
@@ -14,7 +13,6 @@ import {animate, style, transition, trigger} from '@angular/animations';
   imports: [
     HangmanGameComponent,
     MemoryGameComponent,
-    NgIf,
     SnakeGameComponent,
     TicTacToeComponent,
     TypingSpeedTestComponent,

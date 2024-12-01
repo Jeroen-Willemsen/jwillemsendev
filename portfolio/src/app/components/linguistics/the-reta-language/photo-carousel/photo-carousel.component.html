@@ -21,9 +21,10 @@
 
 <div class="indicators">
   <p>{{ captionedImages[currentIndex].caption }}</p>
-  <span
-    (click)="goToImage(i)"
-    *ngFor="let image of captionedImages; let i = index"
-    [class.active]="i === currentIndex">
+  @for (image of captionedImages; track image.url; let i = $index) {
+    <span
+      (click)="goToImage(i)"
+      [class.active]="i === currentIndex">
   </span>
+  }
 </div>

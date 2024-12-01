@@ -27,11 +27,15 @@
 </div>
 
 <div class="tab-content">
-  <app-hangman-game *ngIf="selectedTab === 'app-hangman-game'"></app-hangman-game>
-  <app-memory-game *ngIf="selectedTab === 'app-memory-game'"></app-memory-game>
-  <app-snake-game *ngIf="selectedTab === 'app-snake-game'"></app-snake-game>
-  <app-tic-tac-toe *ngIf="selectedTab === 'app-tic-tac-toe'"></app-tic-tac-toe>
-  <app-whack-a-mole *ngIf="selectedTab === 'app-whack-a-mole'"></app-whack-a-mole>
+  @if (selectedTab === 'app-hangman-game') {
+    <app-hangman-game></app-hangman-game>
+  } @else if (selectedTab === 'app-memory-game') {
+    <app-memory-game></app-memory-game>
+  } @else if (selectedTab === 'app-snake-game') {
+    <app-snake-game></app-snake-game>
+  } @else if (selectedTab === 'app-tic-tac-toe') {
+    <app-tic-tac-toe></app-tic-tac-toe>
+  } @else if (selectedTab === 'app-whack-a-mole') {
+    <app-whack-a-mole></app-whack-a-mole>
+  }
 </div>
-
-

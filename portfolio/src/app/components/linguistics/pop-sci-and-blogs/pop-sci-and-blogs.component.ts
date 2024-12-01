@@ -1,7 +1,6 @@
 import {BlogsComponent} from './blogs/blogs.component';
 import {Component, OnInit} from '@angular/core';
 import {GamesComponent} from '../../programming/side-projects/games/games.component';
-import {NgIf} from '@angular/common';
 import {PopSciAndBlogService} from '../../../services/pop-sci-and-blog.service';
 import {PopularScienceArticle} from '../../../models/popular-science.article';
 import {PopularScienceComponent} from './popular-science/popular-science.component';
@@ -16,7 +15,6 @@ import {animate, style, transition, trigger} from '@angular/animations';
   imports: [
     BlogsComponent,
     GamesComponent,
-    NgIf,
     PopularScienceComponent,
     PythonApplicationsComponent,
   ],

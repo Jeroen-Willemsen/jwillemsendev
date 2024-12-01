@@ -1,17 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForOf, NgIf, UpperCasePipe} from '@angular/common';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {UpperCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-hangman-game',
   standalone: true,
   imports: [
     UpperCasePipe,
-    NgIf,
-    NgForOf,
-    NgForOf,
-    NgIf,
-    NgIf
   ],
   templateUrl: './hangman-game.component.html',
   styleUrl: './hangman-game.component.scss',

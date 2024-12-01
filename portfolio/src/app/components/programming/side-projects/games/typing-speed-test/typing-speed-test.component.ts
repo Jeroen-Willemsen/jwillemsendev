@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {NgIf} from '@angular/common';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -8,7 +7,6 @@ import {animate, style, transition, trigger} from '@angular/animations';
   standalone: true,
   imports: [
     FormsModule,
-    NgIf
   ],
   templateUrl: './typing-speed-test.component.html',
   styleUrl: './typing-speed-test.component.scss',

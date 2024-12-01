@@ -1,14 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-tic-tac-toe',
   standalone: true,
-  imports: [
-    NgIf,
-    NgForOf
-  ],
+  imports: [],
   templateUrl: './tic-tac-toe.component.html',
   styleUrl: './tic-tac-toe.component.scss',
   animations: [

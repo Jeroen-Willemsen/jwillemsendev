@@ -17,9 +17,12 @@
     </button>
   </div>
   <div class="tab-content">
-    <app-ipa-picker-latex-converter
-      *ngIf="selectedTab === 'app-ipa-picker-latex-converter'"></app-ipa-picker-latex-converter>
-    <app-simple-dutch-weather-app *ngIf="selectedTab === 'app-simple-dutch-weather-app'"></app-simple-dutch-weather-app>
-    <app-simple-calculator *ngIf="selectedTab === 'app-simple-calculator'"></app-simple-calculator>
+    @if (selectedTab === 'app-ipa-picker-latex-converter') {
+      <app-ipa-picker-latex-converter></app-ipa-picker-latex-converter>
+    } @else if (selectedTab === 'app-simple-dutch-weather-app') {
+      <app-simple-dutch-weather-app></app-simple-dutch-weather-app>
+    } @else if (selectedTab === 'app-simple-calculator') {
+      <app-simple-calculator></app-simple-calculator>
+    }
   </div>
 </div>

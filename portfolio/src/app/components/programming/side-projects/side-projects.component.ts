@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {GamesComponent} from './games/games.component';
 import {PythonApplicationsComponent} from './python-applications/python-applications.component';
-import {NgIf} from '@angular/common';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -9,7 +8,6 @@ import {animate, style, transition, trigger} from '@angular/animations';
   standalone: true,
   imports: [
     GamesComponent,
-    NgIf,
     PythonApplicationsComponent
   ],
   templateUrl: './side-projects.component.html',

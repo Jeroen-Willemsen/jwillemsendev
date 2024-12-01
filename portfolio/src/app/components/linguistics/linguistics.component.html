@@ -17,8 +17,12 @@
     </button>
   </div>
   <div class="tab-content">
-    <app-publications *ngIf="selectedTab === 'app-publications'"></app-publications>
-    <app-pop-sci-and-blogs *ngIf="selectedTab === 'app-pop-sci-and-blogs'"></app-pop-sci-and-blogs>
-    <app-the-reta-language *ngIf="selectedTab === 'app-the-reta-language'"></app-the-reta-language>
+    @if (selectedTab === 'app-publications') {
+      <app-publications></app-publications>
+    } @else if (selectedTab === 'app-pop-sci-and-blogs') {
+      <app-pop-sci-and-blogs></app-pop-sci-and-blogs>
+    } @else if (selectedTab === 'app-the-reta-language') {
+      <app-the-reta-language></app-the-reta-language>
+    }
   </div>
 </div>

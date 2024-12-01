@@ -1,18 +1,26 @@
 <div [@fadeIn] class="game">
   <h2 style="margin-top: 0">Whack-a-Mole</h2>
-  <p *ngIf="!gameActive">Click "Start Game" to begin!</p>
-  <p *ngIf="gameActive">Time Left: {{ timeLeft }} seconds</p>
-  <p *ngIf="gameActive">Score: {{ score }}</p>
+  @if (gameActive) {
+    <p>Score: {{ score }}</p>
+    <p>Time Left: {{ timeLeft }} seconds</p>
+  } @else {
+    <p>Click "Start Game" to begin!</p>
+  }
   <div class="grid">
-    <div
-      (click)="whackMole(idx)"
-      *ngFor="let hole of holes; let idx = index"
-      class="hole">
-      <div *ngIf="hole" class="mole">🐹</div>
-    </div>
+    @for (hole of holes; track hole; let idx = $index) {
+      <div
+        (click)="whackMole(idx)"
+        class="hole">
+        @if (hole) {
+          <div class="mole">🐹</div>
+        }
+      </div>
+    }
   </div>
-  <button (click)="startGame()" *ngIf="!gameActive">Start Game</button>
-  <div *ngIf="!gameActive && timeLeft !== 30">
-    <p>Game Over! Your score is {{ score }}.</p>
-  </div>
+  @if (!gameActive) {
+    <button (click)="startGame()">Start Game</button>
+    @if (timeLeft !== 30) {
+      <p>Game Over! Your score is {{ score }}.</p>
+    }
+  }
 </div>

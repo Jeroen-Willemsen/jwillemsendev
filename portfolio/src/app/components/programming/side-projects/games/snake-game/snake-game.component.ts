@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, HostListener} from '@angular/core';
-import {NgIf} from '@angular/common';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 export enum DirectionEnum {
@@ -17,9 +16,7 @@ export interface MovingParts {
 @Component({
   selector: 'app-snake-game',
   standalone: true,
-  imports: [
-    NgIf
-  ],
+  imports: [],
   templateUrl: './snake-game.component.html',
   styleUrl: './snake-game.component.scss',
   animations: [
@@ -32,17 +29,17 @@ export interface MovingParts {
   ]
 })
 export class SnakeGameComponent implements AfterViewInit {
-  canvas: HTMLCanvasElement;
-  ctx: CanvasRenderingContext2D;
-  box: number = 20;
-  snake: MovingParts[] = [];
-  direction: DirectionEnum;
-  food: MovingParts;
-  gameInterval: NodeJS.Timeout | number;
-  score: number = 0;
-  canvasWidth: number = 1000;
-  canvasHeight: number = 500;
-  gameOver: boolean = false;
+  protected canvas: HTMLCanvasElement;
+  protected ctx: CanvasRenderingContext2D;
+  protected box: number = 20;
+  protected snake: MovingParts[] = [];
+  protected direction: DirectionEnum;
+  protected food: MovingParts;
+  protected gameInterval: NodeJS.Timeout | number;
+  protected score: number = 0;
+  protected canvasWidth: number = 1200;
+  protected canvasHeight: number = 600;
+  protected gameOver: boolean = false;
 
   ngAfterViewInit(): void {
     this.canvas = <HTMLCanvasElement>document.getElementById('gameCanvas');
@@ -50,7 +47,7 @@ export class SnakeGameComponent implements AfterViewInit {
     this.initGame();
   }
 
-  initGame(): void {
+  initGame: () => void = (): void => {
     if (this.gameInterval) {
       clearInterval(this.gameInterval);
     } // Cleared any existing game intervals
@@ -61,26 +58,18 @@ export class SnakeGameComponent implements AfterViewInit {
     this.gameOver = false; // Reset game over flag
     // Start the game loop
     this.gameInterval = setInterval(() => this.gameLoop(), 100);
-  }
-
-  private getRandomDirection: () => DirectionEnum = () => {
-    const directionArray = Object.values(DirectionEnum);
-    const randomNumber = Math.floor(Math.random() * directionArray.length);
-    return directionArray[randomNumber];
-  }
+  };
 
   generateFood(): void {
     this.food = {
-      x:
-        Math.floor(Math.random() * (this.canvasWidth / this.box)) * this.box,
-      y:
-        Math.floor(Math.random() * (this.canvasHeight / this.box)) * this.box,
+      x: Math.floor(Math.random() * (this.canvasWidth / this.box)) * this.box,
+      y: Math.floor(Math.random() * (this.canvasHeight / this.box)) * this.box,
     };
   }
 
-  @HostListener('document:keydown', ['$event'])
-  handleKeyDown(event: KeyboardEvent): void {
-    const key = event.keyCode;
+  @HostListener('document:keydown', ['$event']) handleKeyDown: (event: KeyboardEvent) => void
+    = (event: KeyboardEvent): void => {
+    const key: number = event.keyCode;
     if (key === 37 && this.direction !== DirectionEnum.R) {
       this.direction = DirectionEnum.L;
     } else if (key === 38 && this.direction !== DirectionEnum.D) {
@@ -89,13 +78,13 @@ export class SnakeGameComponent implements AfterViewInit {
       this.direction = DirectionEnum.R;
     } else if (key === 40 && this.direction !== DirectionEnum.U) {
       this.direction = DirectionEnum.D;
-    }
+    } // Press enter to start new game upon gameOver === true
     if (event.key === 'Enter' && this.gameOver) {
       this.initGame();
     }
-  }
+  };
 
-  gameLoop = (): void => {
+  gameLoop: () => void = (): void => {
     this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
     for (let i = 0; i < this.snake.length; i++) {
       this.ctx.fillStyle = i === 0 ? 'green' : 'lightgreen';
@@ -110,8 +99,8 @@ export class SnakeGameComponent implements AfterViewInit {
     this.ctx.fillStyle = 'red';
     this.ctx.fillRect(this.food.x, this.food.y, this.box, this.box);
 
-    let snakeX = this.snake[0].x;
-    let snakeY = this.snake[0].y;
+    let snakeX: number = this.snake[0].x;
+    let snakeY: number = this.snake[0].y;
 
     if (this.direction === DirectionEnum.L) snakeX -= this.box;
     if (this.direction === DirectionEnum.U) snakeY -= this.box;
@@ -131,7 +120,7 @@ export class SnakeGameComponent implements AfterViewInit {
       return;
     }
 
-    let newHead = {x: snakeX, y: snakeY};
+    let newHead: MovingParts = {x: snakeX, y: snakeY};
 
     // Check if snake eats food
     if (snakeX === this.food.x && snakeY === this.food.y) {
@@ -143,12 +132,19 @@ export class SnakeGameComponent implements AfterViewInit {
     this.snake.unshift(newHead);
   };
 
-  collision = (head: MovingParts, array: MovingParts[]): boolean => {
-    for (let i = 0; i < array.length; i++) {
+  collision: (head: MovingParts, array: MovingParts[]) => boolean
+    = (head: MovingParts, array: MovingParts[]): boolean => {
+    for (let i: number = 0; i < array.length; i++) {
       if (head.x === array[i].x && head.y === array[i].y) {
         return true;
       }
     }
     return false;
   };
+
+  private getRandomDirection: () => DirectionEnum = () => {
+    const directionArray: DirectionEnum[] = Object.values(DirectionEnum);
+    const randomNumber: number = Math.floor(Math.random() * directionArray.length);
+    return directionArray[randomNumber];
+  }
 }

@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {SimpleCalculatorComponent} from './simple-calculator/simple-calculator.component';
 import {SimpleDutchWeatherAppComponent} from './simple-dutch-weather-app/simple-dutch-weather-app.component';
 import {IpaPickerLatexConverterComponent} from './ipa-picker-latex-converter/ipa-picker-latex-converter.component';
-import {NgIf} from '@angular/common';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -10,7 +9,6 @@ import {animate, style, transition, trigger} from '@angular/animations';
   standalone: true,
   imports: [
     IpaPickerLatexConverterComponent,
-    NgIf,
     SimpleCalculatorComponent,
     SimpleDutchWeatherAppComponent,
   ],

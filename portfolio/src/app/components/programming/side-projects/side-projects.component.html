@@ -12,7 +12,11 @@
     </button>
   </div>
   <div class="tab-content">
-    <app-games *ngIf="selectedTab === 'app-games'"></app-games>
-    <app-python-applications *ngIf="selectedTab === 'app-python-applications'"></app-python-applications>
+    @if (selectedTab === 'app-games') {
+      <app-games></app-games>
+    }
+    @if (selectedTab === 'app-python-applications') {
+      <app-python-applications></app-python-applications>
+    }
   </div>
 </div>

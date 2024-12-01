@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {NgIf} from '@angular/common';
 import {DevelopmentExperienceComponent} from './development-experience/development-experience.component';
 import {SideProjectsComponent} from './side-projects/side-projects.component';
 import {PopularScienceComponent} from '../linguistics/pop-sci-and-blogs/popular-science/popular-science.component';
@@ -12,7 +11,6 @@ import {animate, style, transition, trigger} from '@angular/animations';
   standalone: true,
   imports: [
     DevelopmentExperienceComponent,
-    NgIf,
     SideProjectsComponent,
     PopularScienceComponent,
     PublicationsComponent,

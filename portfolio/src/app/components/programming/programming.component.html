@@ -12,6 +12,9 @@
 </div>
 
 <div class="tab-content">
-  <app-development-experience *ngIf="selectedTab === 'app-development-experience'"></app-development-experience>
-  <app-side-projects *ngIf="selectedTab === 'app-side-projects'"></app-side-projects>
+  @if (selectedTab === 'app-development-experience') {
+    <app-development-experience></app-development-experience>
+  } @else if (selectedTab === 'app-side-projects') {
+    <app-side-projects></app-side-projects>
+  }
 </div>

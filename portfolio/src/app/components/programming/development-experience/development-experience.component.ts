@@ -1,5 +1,5 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
-import {CommonModule, NgForOf, NgIf} from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {DevelopmentExperienceService} from '../../../services/development-experience.service';
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/material/card';
 import {
@@ -25,8 +25,6 @@ import {animate, style, transition, trigger} from '@angular/animations';
     MatExpansionPanelDescription,
     MatExpansionPanelHeader,
     MatExpansionPanelTitle,
-    NgForOf,
-    NgIf,
     MatAccordion,
   ],
   templateUrl: './development-experience.component.html',

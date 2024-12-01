@@ -1,15 +1,11 @@
 import {Component, Input} from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
 import {PopularScienceArticle} from '../../../../models/popular-science.article';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-blogs',
   standalone: true,
-  imports: [
-    NgForOf,
-    NgIf,
-  ],
+  imports: [],
   templateUrl: './blogs.component.html',
   styleUrl: './blogs.component.scss',
   animations: [

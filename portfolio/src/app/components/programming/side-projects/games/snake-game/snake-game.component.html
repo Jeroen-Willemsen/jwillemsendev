@@ -5,7 +5,10 @@
     [attr.width]="canvasWidth"
     id="gameCanvas">
   </canvas>
-  <p>Score: {{ score }}</p>
-  <p *ngIf="gameOver">Game Over!</p> <!-- Display game over message -->
-  <button (click)="initGame()">Start game ...</button>
+  @if (!gameOver) {
+    <p>Score: {{ score }}</p>
+  } @else {
+    <p>Game Over! Final score: {{ score }}</p>
+  }
+  <button (click)="initGame()"><p style="font-size: smaller">Click here or press Enter for a new game</p></button>
 </div>
